@@ -9,7 +9,7 @@
 <meta property="og:image" content="hero.jpg">
 <meta property="og:type" content="website">
 <title>Wonder Lab</title>
-<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTMiIGZpbGw9IiMwQTJDNEMiLz48Y2lyY2xlIGN4PSIzMiIgY3k9IjMyIiByPSIyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRjJCMDQwIiBzdHJva2Utd2lkdGg9IjYuNSIvPjxjaXJjbGUgY3g9IjMyIiBjeT0iMzIiIHI9IjciIGZpbGw9IiNGMkIwNDAiLz48L3N2Zz4=">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTMiIGZpbGw9IiMwQTJDNEMiLz48Y2lyY2xlIGN4PSIzNCIgY3k9IjIzIiByPSI5LjUiIGZpbGw9IiNGMkIwNDAiLz48cGF0aCBkPSJNMSA2MCBMMjEgMjUgTDMzIDQyIEw0MyAyOSBMNjMgNjAgWiIgZmlsbD0iI0U0RUZGOCIvPjxwYXRoIGQ9Ik0yMSAyNSBMMzMgNDIgTDI3IDQyIFoiIGZpbGw9IiNCQ0Q4RUQiLz48L3N2Zz4=">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@300;400;500;600&display=swap">
@@ -65,7 +65,7 @@ img{display:block}
 .topbar{position:relative;z-index:40;background:var(--sky-0);border-bottom:1px solid var(--line)}
 .topbar-in{max-width:var(--maxw);margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .mark{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:1rem;letter-spacing:-.02em}
-.sunspot{width:15px;height:15px;flex:none;display:block;color:var(--sun)}
+.sunspot{width:15px;height:15px;border-radius:50%;flex:none;background:radial-gradient(circle at 40% 36%,#FFF4DC,var(--sun-bright) 50%,#C9790E 100%);box-shadow:0 0 13px 2px rgba(242,176,64,.5)}
 .topbar .org{font-family:var(--mono);font-size:.65rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);text-decoration:none}
 .topbar .org:hover{color:var(--sun)}
 
@@ -212,7 +212,7 @@ img{ max-width: 100%; }
 <body>
 <header class="topbar">
   <div class="topbar-in">
-    <div class="mark"><svg class="sunspot" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="20" fill="none" stroke="currentColor" stroke-width="9"/><circle cx="32" cy="32" r="7" fill="currentColor"/></svg>Wonder Lab</div>
+    <div class="mark"><span class="sunspot" aria-hidden="true"></span>Wonder Lab</div>
     <a class="org" href="#building-humane-tech">an initiative of Building Humane Tech</a>
   </div>
 </header>
