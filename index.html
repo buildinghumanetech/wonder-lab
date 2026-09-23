@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Wonder Lab measures whether AI interaction changes awe and self-transcendent experience in people, then builds the evaluation from what actually moved them. An initiative of Building Humane Tech.">
+<meta property="og:title" content="Wonder Lab">
+<meta property="og:description" content="Can AI cultivate awe? We measure the human experience first.">
+<meta property="og:image" content="hero.jpg">
+<meta property="og:type" content="website">
+<title>Wonder Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@300;400;500;600&display=swap">
+<style>
+:root{
+  color-scheme: light dark;
+
+  --sky-0: light-dark(#F3F8FC, #05101D);
+  --sky-1: light-dark(#E4EFF8, #0A1B2D);
+  --sky-2: light-dark(#C3DCEF, #10283F);
+  --ink:   light-dark(#0A1827, #E6F0F9);
+  --ink-2: light-dark(#3A5570, #A7C0D5);
+  --ink-3: light-dark(#6F879E, #7B97AF);
+  --line:  light-dark(rgba(10,24,39,.14), rgba(230,240,249,.16));
+  --card:  light-dark(#FFFFFF, #0C1F33);
+
+  --deep-bg:     light-dark(#08203A, #030A13);
+  --deep-panel:  light-dark(#0F3054, #0A1E34);
+  --deep-ink:    #DEEBF7;
+  --deep-ink-2:  #93B4D0;
+  --deep-line:   rgba(222,235,247,.18);
+
+  --sun:        light-dark(#B86806, #F0AC3C);
+  --sun-bright: #F2B040;
+  --gold:       #D4AF37;
+
+  --display:"Archivo",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --body:"Public Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+
+  --maxw:1140px;
+  --readw:64ch;
+}
+:root[data-theme="light"]{ color-scheme: light; }
+:root[data-theme="dark"]{ color-scheme: dark; }
+
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--sky-0);color:var(--ink);
+  font-family:var(--body);font-weight:350;
+  font-size:clamp(16px,1.04vw,17.5px);line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:-.022em;font-weight:600}
+p{margin:0}
+a{color:inherit}
+img{display:block}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:20px}
+.eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.17em;text-transform:uppercase;color:var(--ink-3);margin:0;font-weight:500}
+
+/* topbar */
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--sky-0) 84%,transparent);border-bottom:1px solid var(--line)}
+.topbar-in{max-width:var(--maxw);margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.mark{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:1rem;letter-spacing:-.02em}
+.sunspot{width:12px;height:12px;border-radius:50%;flex:none;background:radial-gradient(circle at 40% 36%,#FFF4DC,var(--sun-bright) 50%,#C9790E 100%);box-shadow:0 0 11px 2px rgba(242,176,64,.5)}
+.topbar .org{font-family:var(--mono);font-size:.65rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);text-decoration:none}
+.topbar .org:hover{color:var(--sun)}
+
+/* hero */
+.hero{position:relative;isolation:isolate;background:#0A2C4C;overflow:hidden}
+.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 32%;max-width:100%}
+.hero-scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,32,58,.04) 0%,rgba(8,32,58,.10) 34%,rgba(8,32,58,.62) 66%,rgba(7,26,47,.93) 100%)}
+.hero-in{position:relative;z-index:2;min-height:clamp(430px,64vh,620px);display:flex;flex-direction:column;justify-content:flex-end;padding-block:clamp(90px,15vw,150px) clamp(38px,4.5vw,56px);color:#EEF6FD}
+.hero-in .eyebrow{color:#BBD6EC}
+.hero h1{font-size:clamp(2.3rem,6.2vw,4.5rem);line-height:1.02;font-weight:600;margin:.55rem 0 0;max-width:16ch;color:#FFF;text-shadow:0 2px 26px rgba(4,18,34,.5)}
+.hero h1 b{color:var(--sun-bright);font-weight:600}
+.hero-lede{margin-top:22px;max-width:54ch;font-size:clamp(1.03rem,1.45vw,1.2rem);line-height:1.56;color:#D3E4F2;text-shadow:0 1px 14px rgba(4,18,34,.45)}
+.hero-lede strong{color:#FFF;font-weight:500}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:13px 21px;border:1px solid transparent;transition:.18s ease}
+.btn-primary{background:#FFF;color:#0A1827}
+.btn-primary:hover{background:var(--sun-bright);color:#231301}
+.btn-ghost{border-color:rgba(238,246,253,.42);color:#EEF6FD}
+.btn-ghost:hover{border-color:var(--sun-bright);color:var(--sun-bright)}
+.btn:focus-visible,a:focus-visible{outline:2px solid var(--sun-bright);outline-offset:3px}
+
+/* sections */
+section{padding-block:clamp(38px,4vw,58px)}
+.sec-head{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.sec-head h2{font-size:clamp(1.6rem,2.9vw,2.3rem);line-height:1.16;max-width:26ch;font-weight:600}
+.lede{font-size:clamp(1.01rem,1.25vw,1.13rem);color:var(--ink-2);max-width:var(--readw)}
+.body-col{display:flex;flex-direction:column;gap:17px;max-width:var(--readw);color:var(--ink-2)}
+.body-col strong{color:var(--ink);font-weight:500}
+.cite{font-family:var(--mono);font-size:.72rem;color:var(--ink-3);line-height:1.6}
+.deep .cite{color:var(--deep-ink-2);opacity:.85}
+.pull{font-family:var(--display);font-weight:600;letter-spacing:-.022em;font-size:clamp(1.2rem,2.45vw,1.8rem);line-height:1.24;color:var(--ink);max-width:25ch;border-left:3px solid var(--sun);padding-left:20px;margin-top:6px}
+
+/* premise */
+.premise{background:var(--sky-1);border-block:1px solid var(--line)}
+
+/* deep */
+.deep{background:var(--deep-bg);color:var(--deep-ink)}
+.deep h2,.deep h3{color:var(--deep-ink)}
+.deep .lede,.deep .body-col{color:var(--deep-ink-2)}
+.deep .body-col strong{color:var(--deep-ink)}
+.deep .eyebrow{color:var(--sun-bright)}
+
+/* two questions */
+.qs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px;margin-top:8px}
+.q{border-top:2px solid var(--sun);padding-top:18px;display:flex;flex-direction:column;gap:10px}
+.q .n{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.q p{font-family:var(--display);font-weight:500;letter-spacing:-.018em;font-size:clamp(1.08rem,1.8vw,1.32rem);line-height:1.3;color:var(--ink)}
+
+/* sequence */
+.seq{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0;margin-top:26px;border:1px solid var(--deep-line)}
+.step{padding:24px 22px;border-right:1px solid var(--deep-line);display:flex;flex-direction:column;gap:10px;position:relative}
+.step:last-child{border-right:none}
+@media (max-width:980px){.step{border-right:none;border-bottom:1px solid var(--deep-line)}.step:last-child{border-bottom:none}}
+.step .n{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sun-bright)}
+.step h3{font-size:1.05rem;line-height:1.26;color:var(--deep-ink)}
+.step p{font-size:.9rem;color:var(--deep-ink-2);line-height:1.54}
+.seq-note{margin-top:22px;font-size:.93rem;color:var(--deep-ink-2);max-width:66ch}
+.seq-note b{color:var(--deep-ink);font-weight:500}
+
+/* domains */
+.domains{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:24px;margin-top:24px}
+.domain{border-top:2px solid var(--sun);padding-top:20px;display:flex;flex-direction:column;gap:10px}
+.domain .tag{font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3)}
+.domain h3{font-size:1.12rem;line-height:1.28}
+.domain p{font-size:.93rem;color:var(--ink-2);line-height:1.55}
+.domain .edge{font-size:.86rem;color:var(--ink-3);border-top:1px solid var(--line);padding-top:10px;margin-top:2px}
+.domain .edge b{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sun);display:block;margin-bottom:5px;font-weight:500}
+
+/* hypotheses */
+.hyp{border:1px solid var(--deep-line);background:var(--deep-panel);margin-top:24px}
+.hyp-row{display:grid;grid-template-columns:auto 1fr;gap:18px;padding:16px clamp(18px,2.6vw,26px);border-bottom:1px solid var(--deep-line);align-items:baseline}
+.hyp-row:last-child{border-bottom:none}
+.hyp-row .i{font-family:var(--mono);font-size:.72rem;color:var(--sun-bright);font-variant-numeric:tabular-nums}
+.hyp-row .t{font-size:.96rem;color:var(--deep-ink-2);line-height:1.5}
+.hyp-row .t b{color:var(--deep-ink);font-weight:500}
+.hyp-caption{margin-top:20px;font-size:.93rem;color:var(--deep-ink-2);max-width:60ch}
+.hyp-caption b{color:var(--sun-bright);font-weight:500}
+
+/* three outcomes */
+.outcomes{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;margin-top:24px}
+.oc{border:1px solid var(--line);background:var(--card);padding:22px;display:flex;flex-direction:column;gap:10px}
+.oc .bar{height:4px;width:100%}
+.oc.up .bar{background:linear-gradient(90deg,#B86806,var(--sun-bright))}
+.oc.flat .bar{background:var(--line)}
+.oc.down .bar{background:linear-gradient(90deg,#4E6D8A,#2B4F6E)}
+.oc h3{font-size:1.04rem}
+.oc p{font-size:.91rem;color:var(--ink-2);line-height:1.52}
+
+/* panels */
+.panels{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px;margin-top:22px}
+.panel{border:1px solid var(--deep-line);padding:24px;display:flex;flex-direction:column;gap:12px}
+.panel h3{font-size:1.04rem;color:var(--deep-ink)}
+.panel p{font-size:.92rem;color:var(--deep-ink-2);line-height:1.54}
+.panel ul{margin:0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:7px}
+.panel li{font-size:.88rem;color:var(--deep-ink-2);padding-left:16px;position:relative}
+.panel li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--sun-bright)}
+
+/* asks */
+.asks{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:24px}
+.ask-cta{display:flex;flex-wrap:wrap;align-items:center;gap:16px 20px;margin-top:24px}
+.btn-solid{background:var(--ink);color:var(--sky-0);border-color:var(--ink)}
+.btn-solid:hover{background:var(--sun);border-color:var(--sun);color:#231301}
+.ask-cta-note{font-size:.89rem;color:var(--ink-3);max-width:46ch;line-height:1.5}
+.ask-cta-note a{color:var(--sun);text-decoration:none;border-bottom:1px solid var(--line)}
+.ask-cta-note a:hover{border-color:var(--sun)}
+.ask{background:var(--card);padding:22px clamp(18px,2.6vw,28px);display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start}
+.ask .who{font-family:var(--mono);font-size:.67rem;letter-spacing:.11em;text-transform:uppercase;color:var(--sun);min-width:13ch;padding-top:4px}
+.ask .what{font-size:.96rem;color:var(--ink-2);line-height:1.55}
+.ask .what b{color:var(--ink);font-weight:500}
+@media (max-width:660px){.ask{grid-template-columns:1fr;gap:8px}.ask .who{padding-top:0}}
+
+/* parent */
+.parent{background:var(--sky-1);border-block:1px solid var(--line)}
+.parent-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,60px);align-items:start}
+@media (max-width:820px){.parent-grid{grid-template-columns:1fr}}
+.bht-card{border:1px solid var(--line);background:var(--card);padding:26px}
+.bht-card h3{font-size:1.04rem;margin-bottom:12px}
+.bht-card p{font-size:.91rem;color:var(--ink-2);line-height:1.55}
+.bht-card ul{margin:16px 0 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+.bht-card li{font-size:.88rem;color:var(--ink-2);padding-left:18px;position:relative}
+.bht-card li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--sun)}
+
+/* contact */
+.contact{background:linear-gradient(180deg,var(--sky-0) 0%,var(--sky-1) 58%,var(--sky-2) 100%)}
+.contact h2{font-size:clamp(1.8rem,4vw,2.9rem);line-height:1.07;max-width:20ch;text-transform:none}
+.contact .lede{margin-top:20px}
+.mailto{display:inline-block;margin-top:26px;font-family:var(--display);font-weight:600;letter-spacing:-.02em;font-size:clamp(1.05rem,2.4vw,1.6rem);color:var(--ink);text-decoration:none;border-bottom:2px solid var(--sun);padding-bottom:3px}
+.mailto:hover{color:var(--sun)}
+.contact-note{margin-top:20px;font-size:.89rem;color:var(--ink-2);max-width:48ch}
+
+footer{border-top:1px solid var(--line);background:var(--sky-2);padding-block:28px calc(28px + env(safe-area-inset-bottom,0px))}
+.foot-in{max-width:var(--maxw);margin:0 auto;padding-inline:20px;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2)}
+.foot-in a{text-decoration:none;border-bottom:1px solid var(--line)}
+.foot-in a:hover{color:var(--sun);border-color:var(--sun)}
+</style>
+<style>
+:root{
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+img{ max-width: 100%; }
+[hidden]{ display: none !important; }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-in">
+    <div class="mark"><span class="sunspot" aria-hidden="true"></span>Wonder Lab</div>
+    <a class="org" href="#building-humane-tech">an initiative of Building Humane Tech</a>
+  </div>
+</header>
+
+<div class="hero">
+  <img class="hero-photo" src="hero.jpg" alt="Sunlight bursting directly over the summit of a snow covered mountain range against a clear blue sky.">
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <div class="wrap hero-in">
+    <p class="eyebrow">an open research initiative</p>
+    <h1>Can AI cultivate <b>awe</b>?</h1>
+    <p class="hero-lede">We do not assume the answer is yes. AI might deepen an encounter with something larger than yourself. It might have no effect. It might take the encounter and put itself at the center of it.</p>
+    <p class="hero-lede" style="margin-top:14px"><strong>We measure the human experience first.</strong> Then we build the evaluation out of what actually moved people.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#collaborate">Work with us</a>
+      <a class="btn btn-ghost" href="#method">How it works</a>
+    </div>
+  </div>
+</div>
+
+<section class="premise">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">the asymmetry</p>
+      <h2>Everyone measures the floor. Few measure the ceiling.</h2>
+    </div>
+    <div class="body-col">
+      <p>Roughly a quarter of internet using American adults now have social interactions with AI chatbots. Some of those conversations are about wonder, beauty, mortality, meaning, spiritual life, and the limits of what we know.</p>
+      <p>AI wellbeing research has concentrated on preventing systems from making people worse. Suicide, psychosis, manipulation, dependency. That work is essential, and it has the institutions, the regulation and the evaluation infrastructure behind it.</p>
+      <p><strong>There is almost no infrastructure for the other direction.</strong> No accepted way to test a positive claim about human flourishing, and no way to find out when such a claim is false. Meaning, spirituality, wonder and transcendence are the least developed territory in AI evaluation.</p>
+      <p class="pull">If we cannot meet wonder in an AI mediated world, we have lost part of ourselves.</p>
+      <p class="cite">27% of internet using U.S. adults report social interactions with AI chatbots. Elon University, Imagining the Digital Future Center, May 2026.</p>
+    </div>
+  </div>
+</section>
+
+<section class="deep">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">the two questions</p>
+      <h2>Awe is where we start, because awe is tractable</h2>
+      <p class="lede">Awe is a well studied self transcendent emotion with established theory, validated measures, established study paradigms and cross cultural evidence. Keltner and Haidt characterize it through perceived vastness and a need for accommodation when an experience exceeds your existing mental structures. That gives us something to actually test.</p>
+    </div>
+    <div class="qs">
+      <div class="q">
+        <span class="n">question one &middot; human</span>
+        <p>Can interaction with AI measurably increase or diminish awe and self transcendent experience in people?</p>
+      </div>
+      <div class="q">
+        <span class="n">question two &middot; model</span>
+        <p>And what observable model behaviors account for those effects?</p>
+      </div>
+    </div>
+    <div class="body-col" style="margin-top:22px">
+      <p>The second question cannot be answered before the first. That ordering is the whole design.</p>
+      <p class="cite">Keltner &amp; Haidt, <em>Cognition and Emotion</em>, 2003. Primary measures include the Awe Experience Scale (Yaden, Kaufman, Hyde, Chirico, Gaggioli, Zhang &amp; Keltner, <em>Journal of Positive Psychology</em>, 2019) and established small self measures (Piff et al., <em>JPSP</em>, 2015).</p>
+    </div>
+  </div>
+</section>
+
+<section id="method">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">the method</p>
+      <h2>The benchmark is the output, not the starting point</h2>
+      <p class="lede">Most AI evaluation begins with a rubric and assumes it corresponds to human wellbeing. We are running it the other way.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="seq" style="border-color:var(--line)">
+      <div class="step" style="border-color:var(--line)">
+        <span class="n" style="color:var(--sun)">01 &middot; construct</span>
+        <h3 style="color:var(--ink)">Define and pre-register</h3>
+        <p style="color:var(--ink-2)">Anchor in established theory and validated measurement. Specify primary and secondary human outcomes, candidate model behaviors, conditions and hypotheses before any outcome analysis.</p>
+      </div>
+      <div class="step" style="border-color:var(--line)">
+        <span class="n" style="color:var(--sun)">02 &middot; human measurement</span>
+        <h3 style="color:var(--ink)">Measure what people experience</h3>
+        <p style="color:var(--ink-2)">Participants encounter stimuli across four domains, randomized across forms of AI participation, against a non-AI control. We measure the human outcome directly.</p>
+      </div>
+      <div class="step" style="border-color:var(--line)">
+        <span class="n" style="color:var(--sun)">03 &middot; behavioral inference</span>
+        <h3 style="color:var(--ink)">Find what actually mattered</h3>
+        <p style="color:var(--ink-2)">Analyze which model behaviors predict human outcomes, in which domains, for whom. Behaviors that do not survive testing are discarded.</p>
+      </div>
+      <div class="step" style="border-color:var(--line)">
+        <span class="n" style="color:var(--sun)">04 &middot; open evaluation</span>
+        <h3 style="color:var(--ink)">Build and release</h3>
+        <p style="color:var(--ink-2)">Turn surviving behaviors into multi-turn scenarios and validated automated graders. Run across frontier models. Release methodology, scenarios, graders, disagreement data and negative findings.</p>
+      </div>
+    </div>
+    <p class="seq-note" style="color:var(--ink-2)"><b style="color:var(--ink)">The result is a benchmark grounded in what happens to people</b>, not only in expert judgment about what AI should do. Nine months.</p>
+  </div>
+</section>
+
+<section class="deep">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">four domains</p>
+      <h2>Where self transcendence actually lives</h2>
+      <p class="lede">Derived from the empirical literature on awe, including Keltner's cross cultural work identifying moral beauty, nature, collective effervescence, art, music, spirituality, epiphany, and life and death as its recurring elicitors.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="domains">
+      <div class="domain" style="border-top-color:var(--sun-bright)">
+        <span class="tag" style="color:var(--deep-ink-2)">domain one</span>
+        <h3 style="color:var(--deep-ink)">Transcendence, meaning and mortality</h3>
+        <p style="color:var(--deep-ink-2)">Existential meaning, vocation, sacredness, mortality, mystery, doubt. The questions people bring to an AI at two in the morning.</p>
+        <div class="edge" style="color:var(--deep-ink-2);border-top-color:var(--deep-line)"><b style="color:var(--sun-bright)">the risk here</b>Inflation. A system that answers a question about meaning by making the user the answer.</div>
+      </div>
+      <div class="domain" style="border-top-color:var(--sun-bright)">
+        <span class="tag" style="color:var(--deep-ink-2)">domain two</span>
+        <h3 style="color:var(--deep-ink)">Moral beauty and human connection</h3>
+        <p style="color:var(--deep-ink-2)">Awe at another person's courage, kindness, sacrifice, perseverance, love. Whether AI can deepen attention to a person or a relationship without becoming the relational object itself.</p>
+      </div>
+      <div class="domain" style="border-top-color:var(--sun-bright)">
+        <span class="tag" style="color:var(--deep-ink-2)">domain three</span>
+        <h3 style="color:var(--deep-ink)">The more than self world</h3>
+        <p style="color:var(--deep-ink-2)">Nature, physical scale, deep time, cosmology, life and death, music, art, beauty. Whether AI participation deepens an encounter with something outside the interaction, or whether the mediation itself diminishes it.</p>
+      </div>
+      <div class="domain" style="border-top-color:var(--sun-bright)">
+        <span class="tag" style="color:var(--deep-ink-2)">domain four</span>
+        <h3 style="color:var(--deep-ink)">Wonder, discovery and the unknown</h3>
+        <p style="color:var(--deep-ink-2)">Science, mathematics, consciousness, origins, genuinely unresolved problems. Whether AI can hold curiosity and epistemic humility instead of reflexively resolving uncertainty. This is where the work meets overconfidence, hallucination and sycophancy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">candidate behaviors</p>
+      <h2>What we think the model might be doing</h2>
+      <p class="lede">These are hypotheses. Every one is on the page to be tested and possibly thrown out.</p>
+    </div>
+    <div class="hyp" style="background:var(--card);border-color:var(--line)">
+      <div class="hyp-row" style="border-bottom-color:var(--line)"><span class="i" style="color:var(--sun)">01</span><span class="t" style="color:var(--ink-2)"><b style="color:var(--ink)">Preserves the need for accommodation</b> rather than prematurely resolving what the person is encountering.</span></div>
+      <div class="hyp-row" style="border-bottom-color:var(--line)"><span class="i" style="color:var(--sun)">02</span><span class="t" style="color:var(--ink-2)"><b style="color:var(--ink)">Holds perceived vastness</b> rather than reflexively reducing it to explanation.</span></div>
+      <div class="hyp-row" style="border-bottom-color:var(--line)"><span class="i" style="color:var(--sun)">03</span><span class="t" style="color:var(--ink-2)"><b style="color:var(--ink)">Supports a non-diminishing small self</b> rather than conferring exceptional or cosmic significance on the user.</span></div>
+      <div class="hyp-row" style="border-bottom-color:var(--line)"><span class="i" style="color:var(--sun)">04</span><span class="t" style="color:var(--ink-2)"><b style="color:var(--ink)">Directs attention outward</b> toward people, places, communities, practices, or the object of wonder, rather than toward itself.</span></div>
+      <div class="hyp-row" style="border-bottom-color:var(--line)"><span class="i" style="color:var(--sun)">05</span><span class="t" style="color:var(--ink-2)"><b style="color:var(--ink)">Supports curiosity and uncertainty</b> rather than manufacturing closure.</span></div>
+      <div class="hyp-row" style="border-bottom-color:var(--line)"><span class="i" style="color:var(--sun)">06</span><span class="t" style="color:var(--ink-2)"><b style="color:var(--ink)">Respects the person's interpretive or spiritual frame</b> without imposing one.</span></div>
+      <div class="hyp-row"><span class="i" style="color:var(--sun)">07</span><span class="t" style="color:var(--ink-2)"><b style="color:var(--ink)">Sustains all of the above across repeated interaction</b> rather than gradually becoming substitutive.</span></div>
+    </div>
+    <p class="hyp-caption" style="color:var(--ink-2)"><b style="color:var(--sun)">A theoretically attractive behavior that does not predict a human outcome does not earn a place in the benchmark.</b> Some of these will hold in one domain and not another. Some will have opposite effects for different people. Those are results too.</p>
+  </div>
+</section>
+
+<section class="premise">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">what we do not assume</p>
+      <h2>Three ways this could go, and we are funding all three</h2>
+    </div>
+    <div class="outcomes">
+      <div class="oc up">
+        <span class="bar" aria-hidden="true"></span>
+        <h3>It deepens</h3>
+        <p>AI participation enlarges the encounter and hands the person back to the world. Then we know which behaviors did it, and the benchmark has something to hold models to.</p>
+      </div>
+      <div class="oc flat">
+        <span class="bar" aria-hidden="true"></span>
+        <h3>It does nothing</h3>
+        <p>The eliciting experience does the work and AI adds nothing measurable. A null result on a claim the industry is already making is worth publishing on its own.</p>
+      </div>
+      <div class="oc down">
+        <span class="bar" aria-hidden="true"></span>
+        <h3>It captures</h3>
+        <p>The system takes the experience and puts itself, or the user, at the center of it. The most consequential outcome, and the one nobody currently has a way to detect.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="deep">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">the expert panel</p>
+      <h2>The panel writes the hypotheses. People decide.</h2>
+      <p class="lede">An interdisciplinary working group translates the literature into testable hypotheses and protects construct validity. It does not decide what good AI behavior is. What people actually experience decides that.</p>
+    </div>
+    <div class="panels">
+      <div class="panel">
+        <h3>Who is on it</h3>
+        <ul>
+          <li>Researchers in awe and wonder</li>
+          <li>Psychologists and psychometricians</li>
+          <li>Scholars of attention and aesthetics</li>
+          <li>Researchers in contemplative science and consciousness</li>
+          <li>Methodological skeptics willing to attack the construct</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>What it does not do</h3>
+        <p>It does not rank model responses. It does not write the rubric. It does not settle by consensus what an awe supporting AI looks like.</p>
+        <p>Expert intuition generates the hypotheses. Human outcomes decide which ones are real. A behavior the whole panel expects to help, that does not move the measure, does not make it into the benchmark.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="collaborate">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">what we need</p>
+      <h2>Specific asks, not a general invitation</h2>
+      <p class="lede">If one of these is you, send us a proposal. It takes about ten minutes, and short and specific beats long and general.</p>
+    </div>
+    <div class="asks">
+      <div class="ask">
+        <span class="who">Experimental psychologists</span>
+        <span class="what">You do <b>human subjects research on emotion</b> and you have opinions about our design. Phase one is where you change the outcome of this project, not phase four.</span>
+      </div>
+      <div class="ask">
+        <span class="who">Awe researchers</span>
+        <span class="what">You work with the <b>Awe Experience Scale, DPES, or small self measures</b>, or you built one. We want them used correctly and we want to co author the result.</span>
+      </div>
+      <div class="ask">
+        <span class="who">Labs with rooms</span>
+        <span class="what">You can run <b>in person sessions with participants</b>, and ideally physiological measures alongside self report. We bring the protocol and the stimuli.</span>
+      </div>
+      <div class="ask">
+        <span class="who">Funders</span>
+        <span class="what">Wellbeing research funders, contemplative science foundations, and AI safety programs. Nine months, human study inside the core scope rather than as a stretch goal.</span>
+      </div>
+    </div>
+    <div class="ask-cta">
+      <a class="btn btn-solid" href="FORM_URL" target="_blank" rel="noopener">Submit a proposal</a>
+      <span class="ask-cta-note">Or write to <a href="mailto:wonderlab@buildinghumanetech.com">wonderlab@buildinghumanetech.com</a> if a form is the wrong shape for what you want to say.</span>
+    </div>
+  </div>
+</section>
+
+<section class="parent" id="building-humane-tech">
+  <div class="wrap parent-grid">
+    <div>
+      <div class="sec-head">
+        <p class="eyebrow">who is doing this</p>
+        <h2>We have done the hard half of this before</h2>
+      </div>
+      <div class="body-col">
+        <p>Wonder Lab is an initiative of <strong>Building Humane Tech</strong>, which built HumaneBench, an open behavioral evaluation of AI impact on humans across eight principles grounded in care ethics. It has since been adapted for ongoing evaluation inside a deployed consumer conversational AI product.</p>
+        <p>Two of its principles, <em>Foster Healthy Relationships</em> and <em>Prioritize Long-Term Wellbeing</em>, are the direct antecedents of this work.</p>
+        <p>Nobody had built a measure like that because most people do not agree on what humane means. We grounded it in a named tradition, said so plainly, and made it scorable. A stated position you can argue with beats a neutrality that measures nothing.</p>
+      </div>
+    </div>
+    <aside class="bht-card">
+      <h3>Erika Anderson</h3>
+      <p>Founder and CEO, Building Humane Tech, PBC. The Wonder Lab works at the intersection of awe and wonder research, contemplative science, consciousness research and HCI.</p>
+      <ul>
+        <li>Co-creator of HumaneBench, open source, eight principles, multiple test conditions</li>
+        <li>Co chair, IEEE Measurement Subcommittee, Global AI Systems and Human Flourishing</li>
+        <li>Chair, IEEE Faith and Spirituality Subcommittee</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="wrap">
+    <p class="eyebrow">get in touch</p>
+    <h2>Tell us what you measure.</h2>
+    <p class="lede">And tell us what you wish you could measure.</p>
+    <a class="mailto" href="mailto:wonderlab@buildinghumanetech.com?subject=Wonder%20Lab">wonderlab@buildinghumanetech.com</a>
+    <p class="contact-note">Erika Anderson, Founder and CEO, Building Humane Tech. San Francisco Bay Area.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-in">
+    <span>Wonder Lab &middot; an initiative of Building Humane Tech, PBC</span>
+    <span><a href="https://humanebench.ai">humanebench.ai</a> &nbsp;&middot;&nbsp; <a href="https://buildinghumanetech.com">buildinghumanetech.com</a></span>
+  </div>
+</footer>
+</body>
+</html>
