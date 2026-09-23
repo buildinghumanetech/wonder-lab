@@ -8,8 +8,6 @@
 <meta property="og:title" content="Wonder Lab">
 <meta property="og:description" content="Most AI research measures harm. Wonder Lab measures whether AI can cultivate awe and wonder in people.">
 <meta property="og:image" content="https://wonderlabresearch.org/hero.jpg">
-<meta property="og:image:width" content="1080">
-<meta property="og:image:height" content="569">
 <meta property="og:image:alt" content="Sunlight bursting directly over the summit of a snow covered mountain range against a clear blue sky.">
 <meta property="og:url" content="https://wonderlabresearch.org/">
 <meta property="og:type" content="website">
@@ -79,22 +77,26 @@ img{display:block}
 .topbar .org:hover{color:var(--sun)}
 
 /* hero */
-.hero{position:relative;isolation:isolate;background:#0A2C4C;overflow:hidden}
-.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 32%;max-width:100%}
-.hero-scrim{position:absolute;inset:0;background:linear-gradient(100deg,rgba(5,20,38,.58) 0%,rgba(5,20,38,.34) 30%,rgba(5,20,38,.08) 56%,rgba(5,20,38,0) 78%),linear-gradient(180deg,rgba(8,32,58,0) 0%,rgba(8,32,58,.04) 44%,rgba(8,32,58,.42) 73%,rgba(7,26,47,.9) 100%)}
-.hero-in{position:relative;z-index:2;min-height:clamp(440px,68vh,690px);display:flex;flex-direction:column;justify-content:flex-end;padding-block:clamp(90px,15vw,150px) clamp(38px,4.5vw,56px);color:#EEF6FD}
-.hero-in .eyebrow{color:#FFFFFF;text-shadow:0 1px 3px rgba(4,18,34,.85),0 0 16px rgba(4,18,34,.75)}
-.hero h1{font-size:clamp(2.3rem,6.2vw,4.5rem);line-height:1.02;font-weight:600;margin:.55rem 0 0;max-width:16ch;color:#FFF;text-shadow:0 2px 6px rgba(4,18,34,.5),0 0 34px rgba(4,18,34,.55)}
-.hero h1 b{color:var(--sun-bright);font-weight:600}
-.hero-lede{margin-top:22px;max-width:54ch;font-size:clamp(1.03rem,1.45vw,1.2rem);line-height:1.56;color:#E6F0FA;text-shadow:0 1px 2px rgba(4,18,34,.85),0 0 22px rgba(4,18,34,.7)}
-.hero-lede strong{color:#FFF;font-weight:500}
-.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:stretch;background:var(--sky-0);border-bottom:1px solid var(--line)}
+.hero-copy{display:flex;flex-direction:column;justify-content:center;padding-block:clamp(34px,4.4vw,60px);padding-left:max(20px,calc(50vw - (var(--maxw) / 2) + 20px));padding-right:clamp(24px,3vw,46px)}
+.hero-copy .eyebrow{color:var(--ink-3)}
+.hero-copy h1{font-size:clamp(1.95rem,3.5vw,2.9rem);line-height:1.04;font-weight:600;margin:.45rem 0 0;max-width:12ch;color:var(--ink)}
+.hero-copy h1 b{color:var(--sun);font-weight:600}
+.hero-lede{margin-top:18px;max-width:46ch;font-size:clamp(1rem,1.2vw,1.1rem);line-height:1.56;color:var(--ink-2)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.hero-photo{display:block;width:100%;max-width:100%;height:100%;min-height:clamp(300px,50vh,520px);object-fit:cover;object-position:60% 42%}
+
 .btn{display:inline-flex;align-items:center;font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:13px 21px;border:1px solid transparent;transition:.18s ease}
-.btn-primary{background:#FFF;color:#0A1827}
-.btn-primary:hover{background:var(--sun-bright);color:#231301}
-.btn-ghost{border-color:rgba(238,246,253,.42);color:#EEF6FD}
-.btn-ghost:hover{border-color:var(--sun-bright);color:var(--sun-bright)}
-.btn:focus-visible,a:focus-visible{outline:2px solid var(--sun-bright);outline-offset:3px}
+.btn-line{border-color:var(--line);color:var(--ink-2)}
+.btn-line:hover{border-color:var(--sun);color:var(--sun)}
+.btn:focus-visible,a:focus-visible{outline:2px solid var(--sun);outline-offset:3px}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr}
+  .hero-photo{order:-1;min-height:clamp(230px,38vh,320px);object-position:55% 42%}
+  .hero-copy{padding-inline:20px;padding-block:clamp(26px,5vw,38px)}
+  .hero-copy h1{max-width:14ch}
+}
 
 /* sections */
 section{padding-block:clamp(26px,2.8vw,39px)}
@@ -236,18 +238,16 @@ img{ max-width: 100%; }
 </header>
 
 <div class="hero">
-  <img class="hero-photo" src="hero.jpg" alt="Sunlight bursting directly over the summit of a snow covered mountain range against a clear blue sky.">
-  <div class="hero-scrim" aria-hidden="true"></div>
-  <div class="wrap hero-in">
+  <div class="hero-copy">
     <p class="eyebrow">Open Research Initiative</p>
     <h1>Can AI cultivate <b>awe</b>?</h1>
-    <p class="hero-lede">Most AI research is focused on harms. This initiative is focused on what is possible when we bend toward the light.</p>
-    <p class="hero-lede" style="margin-top:14px"><strong>Awe brings us to higher states of consciousness.</strong> We are measuring whether AI can support that journey.</p>
+    <p class="hero-lede">Most AI research is focused on harms. We are measuring what becomes possible when we bend toward the light.</p>
     <div class="hero-cta">
-      <a class="btn btn-primary" href="#collaborate">Work with us</a>
-      <a class="btn btn-ghost" href="#method">How it works</a>
+      <a class="btn btn-solid" href="#collaborate">Work with us</a>
+      <a class="btn btn-line" href="#method">How it works</a>
     </div>
   </div>
+  <img class="hero-photo" src="hero.jpg" alt="Sunlight bursting directly over the summit of a snow covered mountain range against a clear blue sky.">
 </div>
 
 <section class="premise">
@@ -443,10 +443,10 @@ img{ max-width: 100%; }
 
     <div class="funders">
       <p class="eyebrow">funders</p>
-      <h3>What funding buys</h3>
-      <p>Wellbeing research funders, contemplative science foundations, and AI safety programs. Funding moves the human study from a stretch goal to the center of the design. The evaluation it produces is free to everyone.</p>
+      <h3>How you can support this</h3>
+      <p>Contemplative science foundations and AI safety programs. Funding moves the human study from a stretch goal to the center of the design. The evaluation it produces is free to everyone.</p>
       <div class="funders-cta">
-        <a class="btn btn-solid" href="mailto:wonderlab@buildinghumanetech.com">Email us</a>
+        <a class="btn btn-solid" href="mailto:wonderlab@buildinghumanetech.com?subject=Funding%20the%20Wonder%20Lab&amp;body=Hey%2C%20I%20want%20to%20explore%20funding%20the%20Wonder%20Lab%20for%20">Email us</a>
         <span class="funders-mail">wonderlab@buildinghumanetech.com</span>
       </div>
     </div>
