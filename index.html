@@ -104,6 +104,9 @@ section{padding-block:clamp(26px,2.8vw,39px)}
 
 /* premise */
 .premise{background:var(--sky-1);border-block:1px solid var(--line)}
+.premise-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(26px,3.6vw,52px);align-items:start}
+.premise-grid .pull{margin-top:2px;max-width:24ch}
+@media (max-width:900px){.premise-grid{grid-template-columns:1fr;gap:20px}.premise-grid .pull{max-width:28ch}}
 
 /* deep */
 .deep{background:var(--deep-bg);color:var(--deep-ink)}
@@ -238,10 +241,12 @@ img{ max-width: 100%; }
       <p class="eyebrow">the asymmetry</p>
       <h2>Everyone measures the floor. Few measure the ceiling.</h2>
     </div>
-    <div class="body-col">
-      <p>Roughly <a href="https://imaginingthedigitalfuture.org/reports-and-publications/the-rise-of-ai-companions/" target="_blank" rel="noopener">a quarter</a> of internet using American adults now have social interactions with AI chatbots. Some of those conversations are about wonder, beauty, mortality, meaning, spiritual life, and the limits of what we know.</p>
-      <p>AI wellbeing research has concentrated on preventing systems from making people worse. Suicide, psychosis, manipulation, dependency. That work is essential, and it has the institutions, the regulation and the evaluation infrastructure behind it.</p>
-      <p><strong>There is almost no infrastructure for the other direction.</strong> No accepted way to test a positive claim about human flourishing, and no way to find out when such a claim is false. Meaning, spirituality, wonder and transcendence are the least developed territory in AI evaluation.</p>
+    <div class="premise-grid">
+      <div class="body-col">
+        <p>Roughly <a href="https://imaginingthedigitalfuture.org/reports-and-publications/the-rise-of-ai-companions/" target="_blank" rel="noopener">a quarter</a> of internet using American adults now have social interactions with AI chatbots. Some of those conversations are about wonder, beauty, mortality, meaning, spiritual life, and the limits of what we know.</p>
+        <p>AI wellbeing research has concentrated on preventing systems from making people worse. Suicide, psychosis, manipulation, dependency. That work is essential, and it has the institutions, the regulation and the evaluation infrastructure behind it.</p>
+        <p><strong>There is almost no infrastructure for the other direction.</strong> No accepted way to test a positive claim about human flourishing, and no way to find out when such a claim is false. Meaning, spirituality, wonder and transcendence are the least developed territory in AI evaluation.</p>
+      </div>
       <p class="pull">If we cannot meet wonder in an AI mediated world, we have lost part of ourselves.</p>
     </div>
   </div>
@@ -418,7 +423,7 @@ img{ max-width: 100%; }
       </div>
       <div class="ask">
         <span class="who">Funders</span>
-        <span class="what">Wellbeing research funders, contemplative science foundations, and AI safety programs. Nine months, human study inside the core scope rather than as a stretch goal.</span>
+        <span class="what">Wellbeing research funders, contemplative science foundations, and AI safety programs.</span>
       </div>
     </div>
     <div class="ask-cta">
@@ -444,8 +449,8 @@ img{ max-width: 100%; }
       <p>Founder and CEO, <a href="https://buildinghumanetech.com" target="_blank" rel="noopener">Building Humane Tech</a>, PBC. The Wonder Lab works at the intersection of awe and wonder research, contemplative science, consciousness research and HCI.</p>
       <ul>
         <li>Co-creator of <a href="https://humanebench.ai" target="_blank" rel="noopener">HumaneBench</a>, open source, eight principles, multiple test conditions</li>
-        <li>Co-chair, IEEE Measurement Subcommittee, Global AI Systems and Human Flourishing</li>
-        <li>Chair, IEEE Faith and Spirituality Subcommittee</li>
+        <li>Co-chair, IEEE Measurement Subcommittee, Global AI Systems and Human Flourishing Collaborative</li>
+        <li>Chair, IEEE Faith and Spirituality Subcommittee, Global AI Systems and Human Flourishing Collaborative</li>
       </ul>
     </aside>
   </div>
