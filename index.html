@@ -179,6 +179,11 @@ section{padding-block:clamp(26px,2.8vw,39px)}
 /* asks */
 .asks{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:20px}
 .ask-cta{display:flex;flex-wrap:wrap;align-items:center;gap:16px 20px;margin-top:24px}
+.funders{margin-top:clamp(26px,3vw,38px);border:1px solid var(--line);background:var(--card);padding:clamp(20px,2.6vw,30px) clamp(18px,2.4vw,28px);display:flex;flex-direction:column;gap:11px}
+.funders h3{font-size:clamp(1.15rem,1.9vw,1.45rem);line-height:1.2;color:var(--ink)}
+.funders p{color:var(--ink-2);max-width:66ch;text-wrap:pretty}
+.funders-cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-top:6px}
+.funders-mail{font-family:var(--mono);font-size:.76rem;color:var(--ink-3);user-select:all}
 .btn-solid{background:var(--ink);color:var(--sky-0);border-color:var(--ink)}
 .btn-solid:hover{background:var(--sun);border-color:var(--sun);color:#231301}
 .ask{background:var(--card);padding:16px clamp(16px,2.2vw,24px);display:grid;grid-template-columns:14ch 1fr;gap:6px 22px;align-items:baseline}
@@ -431,13 +436,19 @@ img{ max-width: 100%; }
         <span class="who">Labs with rooms</span>
         <span class="what">You can run <b>in person sessions with participants</b>, and ideally physiological measures alongside self report. We bring the protocol and the stimuli.</span>
       </div>
-      <div class="ask">
-        <span class="who">Funders</span>
-        <span class="what">Wellbeing research funders, contemplative science foundations, and AI safety programs.</span>
-      </div>
     </div>
     <div class="ask-cta">
       <a class="btn btn-solid" href="https://docs.google.com/forms/d/e/1FAIpQLSdGJB4a_S9-xG_puVZ0Wa8KQLTA0uYhv0zt3GvbJESf4J0fHg/viewform" target="_blank" rel="noopener">Submit a proposal</a>
+    </div>
+
+    <div class="funders">
+      <p class="eyebrow">funders</p>
+      <h3>The measurement is the expensive part</h3>
+      <p>Wellbeing research funders, contemplative science foundations, and AI safety programs. Human studies cost money. Everything that comes out of one here is released open, including the results that do not go our way.</p>
+      <div class="funders-cta">
+        <a class="btn btn-solid" href="mailto:wonderlab@buildinghumanetech.com">Email us</a>
+        <span class="funders-mail">wonderlab@buildinghumanetech.com</span>
+      </div>
     </div>
   </div>
 </section>
