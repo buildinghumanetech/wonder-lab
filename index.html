@@ -9,6 +9,7 @@
 <meta property="og:image" content="hero.jpg">
 <meta property="og:type" content="website">
 <title>Wonder Lab</title>
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTMiIGZpbGw9IiMwQTJDNEMiLz48Y2lyY2xlIGN4PSIzNCIgY3k9IjIzIiByPSI5LjUiIGZpbGw9IiNGMkIwNDAiLz48cGF0aCBkPSJNMSA2MCBMMjEgMjUgTDMzIDQyIEw0MyAyOSBMNjMgNjAgWiIgZmlsbD0iI0U0RUZGOCIvPjxwYXRoIGQ9Ik0yMSAyNSBMMzMgNDIgTDI3IDQyIFoiIGZpbGw9IiNCQ0Q4RUQiLz48L3N2Zz4=">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@300;400;500;600&display=swap">
@@ -94,6 +95,10 @@ section{padding-block:clamp(38px,4vw,58px)}
 .body-col{display:flex;flex-direction:column;gap:17px;max-width:var(--readw);color:var(--ink-2)}
 .body-col strong{color:var(--ink);font-weight:500}
 .cite{font-family:var(--mono);font-size:.72rem;color:var(--ink-3);line-height:1.6}
+.lede a,.body-col a,.cite a{color:inherit;text-decoration:none;border-bottom:1px solid var(--sun);padding-bottom:1px}
+.lede a:hover,.body-col a:hover,.cite a:hover{color:var(--sun)}
+.deep .lede a,.deep .body-col a{border-bottom-color:var(--sun-bright)}
+.deep .lede a:hover,.deep .body-col a:hover{color:var(--sun-bright)}
 .deep .cite{color:var(--deep-ink-2);opacity:.85}
 .pull{font-family:var(--display);font-weight:600;letter-spacing:-.022em;font-size:clamp(1.2rem,2.45vw,1.8rem);line-height:1.24;color:var(--ink);max-width:25ch;border-left:3px solid var(--sun);padding-left:20px;margin-top:6px}
 
@@ -185,6 +190,8 @@ section{padding-block:clamp(38px,4vw,58px)}
 .bht-card p{font-size:.91rem;color:var(--ink-2);line-height:1.55}
 .bht-card ul{margin:16px 0 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:9px}
 .bht-card li{font-size:.88rem;color:var(--ink-2);padding-left:18px;position:relative}
+.bht-card a{color:inherit;text-decoration:none;border-bottom:1px solid var(--sun)}
+.bht-card a:hover{color:var(--sun)}
 .bht-card li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--sun)}
 
 /* contact */
@@ -223,8 +230,8 @@ img{ max-width: 100%; }
   <div class="wrap hero-in">
     <p class="eyebrow">an open research initiative</p>
     <h1>Can AI cultivate <b>awe</b>?</h1>
-    <p class="hero-lede">We do not assume the answer is yes. AI might deepen an encounter with something larger than yourself. It might have no effect. It might take the encounter and put itself at the center of it.</p>
-    <p class="hero-lede" style="margin-top:14px"><strong>We measure the human experience first.</strong> Then we build the evaluation out of what actually moved people.</p>
+    <p class="hero-lede">Most AI research is focused on harms. This initiative is focused on what is possible when we bend toward the light.</p>
+    <p class="hero-lede" style="margin-top:14px"><strong>Awe brings us to higher states of consciousness.</strong> Can AI help us on that journey?</p>
     <div class="hero-cta">
       <a class="btn btn-primary" href="#collaborate">Work with us</a>
       <a class="btn btn-ghost" href="#method">How it works</a>
@@ -253,7 +260,7 @@ img{ max-width: 100%; }
     <div class="sec-head">
       <p class="eyebrow">the two questions</p>
       <h2>Awe is where we start, because awe is tractable</h2>
-      <p class="lede">Awe is a well studied self transcendent emotion with established theory, validated measures, established study paradigms and cross cultural evidence. Keltner and Haidt characterize it through perceived vastness and a need for accommodation when an experience exceeds your existing mental structures. That gives us something to actually test.</p>
+      <p class="lede">Awe is a well studied self transcendent emotion with established theory, validated measures, established study paradigms and cross cultural evidence. Keltner and Haidt characterize it through perceived vastness and a need for accommodation when an experience exceeds your existing mental structures.</p>
     </div>
     <div class="qs">
       <div class="q">
@@ -266,7 +273,6 @@ img{ max-width: 100%; }
       </div>
     </div>
     <div class="body-col" style="margin-top:22px">
-      <p>The second question cannot be answered before the first. That ordering is the whole design.</p>
       <p class="cite">Keltner &amp; Haidt, <em>Cognition and Emotion</em>, 2003. Primary measures include the Awe Experience Scale (Yaden, Kaufman, Hyde, Chirico, Gaggioli, Zhang &amp; Keltner, <em>Journal of Positive Psychology</em>, 2019) and established small self measures (Piff et al., <em>JPSP</em>, 2015).</p>
     </div>
   </div>
@@ -277,7 +283,7 @@ img{ max-width: 100%; }
     <div class="sec-head">
       <p class="eyebrow">the method</p>
       <h2>The benchmark is the output, not the starting point</h2>
-      <p class="lede">Most AI evaluation begins with a rubric and assumes it corresponds to human wellbeing. We are running it the other way.</p>
+      <p class="lede">We start with people, not with a rubric. What actually moves them is what the evaluation ends up measuring.</p>
     </div>
   </div>
   <div class="wrap">
@@ -289,7 +295,7 @@ img{ max-width: 100%; }
       </div>
       <div class="step" style="border-color:var(--line)">
         <span class="n" style="color:var(--sun)">02 &middot; human measurement</span>
-        <h3 style="color:var(--ink)">Measure what people experience</h3>
+        <h3 style="color:var(--ink)">Measure experience</h3>
         <p style="color:var(--ink-2)">Participants encounter stimuli across four domains, randomized across forms of AI participation, against a non-AI control. We measure the human outcome directly.</p>
       </div>
       <div class="step" style="border-color:var(--line)">
@@ -303,7 +309,6 @@ img{ max-width: 100%; }
         <p style="color:var(--ink-2)">Turn surviving behaviors into multi-turn scenarios and validated automated graders. Run across frontier models. Release methodology, scenarios, graders, disagreement data and negative findings.</p>
       </div>
     </div>
-    <p class="seq-note" style="color:var(--ink-2)"><b style="color:var(--ink)">The result is a benchmark grounded in what happens to people</b>, not only in expert judgment about what AI should do. Nine months.</p>
   </div>
 </section>
 
@@ -312,7 +317,7 @@ img{ max-width: 100%; }
     <div class="sec-head">
       <p class="eyebrow">four domains</p>
       <h2>Where self transcendence actually lives</h2>
-      <p class="lede">Derived from the empirical literature on awe, including Keltner's cross cultural work identifying moral beauty, nature, collective effervescence, art, music, spirituality, epiphany, and life and death as its recurring elicitors.</p>
+      <p class="lede">Derived from the empirical literature on awe, including <a href="https://bigthink.com/the-learning-curve/awe-the-8-wonders-of-life/" target="_blank" rel="noopener">Keltner's cross cultural work</a> identifying moral beauty, nature, collective effervescence, art, music, spirituality, epiphany, and life and death as its recurring elicitors.</p>
     </div>
   </div>
   <div class="wrap">
@@ -321,7 +326,6 @@ img{ max-width: 100%; }
         <span class="tag" style="color:var(--deep-ink-2)">domain one</span>
         <h3 style="color:var(--deep-ink)">Transcendence, meaning and mortality</h3>
         <p style="color:var(--deep-ink-2)">Existential meaning, vocation, sacredness, mortality, mystery, doubt. The questions people bring to an AI at two in the morning.</p>
-        <div class="edge" style="color:var(--deep-ink-2);border-top-color:var(--deep-line)"><b style="color:var(--sun-bright)">the risk here</b>Inflation. A system that answers a question about meaning by making the user the answer.</div>
       </div>
       <div class="domain" style="border-top-color:var(--sun-bright)">
         <span class="tag" style="color:var(--deep-ink-2)">domain two</span>
@@ -336,7 +340,7 @@ img{ max-width: 100%; }
       <div class="domain" style="border-top-color:var(--sun-bright)">
         <span class="tag" style="color:var(--deep-ink-2)">domain four</span>
         <h3 style="color:var(--deep-ink)">Wonder, discovery and the unknown</h3>
-        <p style="color:var(--deep-ink-2)">Science, mathematics, consciousness, origins, genuinely unresolved problems. Whether AI can hold curiosity and epistemic humility instead of reflexively resolving uncertainty. This is where the work meets overconfidence, hallucination and sycophancy.</p>
+        <p style="color:var(--deep-ink-2)">Science, mathematics, consciousness, origins, genuinely unresolved problems. Whether AI can hold curiosity instead of reflexively resolving uncertainty. This is where the work meets overconfidence, hallucination and sycophancy.</p>
       </div>
     </div>
   </div>
@@ -346,8 +350,8 @@ img{ max-width: 100%; }
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">candidate behaviors</p>
-      <h2>What we think the model might be doing</h2>
-      <p class="lede">These are hypotheses. Every one is on the page to be tested and possibly thrown out.</p>
+      <h2>What we want to explore about the model</h2>
+      <p class="lede">Our initial hypotheses. We are not claiming models do these things today. We want to find out whether they can, and under what conditions.</p>
     </div>
     <div class="hyp" style="background:var(--card);border-color:var(--line)">
       <div class="hyp-row" style="border-bottom-color:var(--line)"><span class="i" style="color:var(--sun)">01</span><span class="t" style="color:var(--ink-2)"><b style="color:var(--ink)">Preserves the need for accommodation</b> rather than prematurely resolving what the person is encountering.</span></div>
@@ -358,7 +362,6 @@ img{ max-width: 100%; }
       <div class="hyp-row" style="border-bottom-color:var(--line)"><span class="i" style="color:var(--sun)">06</span><span class="t" style="color:var(--ink-2)"><b style="color:var(--ink)">Respects the person's interpretive or spiritual frame</b> without imposing one.</span></div>
       <div class="hyp-row"><span class="i" style="color:var(--sun)">07</span><span class="t" style="color:var(--ink-2)"><b style="color:var(--ink)">Sustains all of the above across repeated interaction</b> rather than gradually becoming substitutive.</span></div>
     </div>
-    <p class="hyp-caption" style="color:var(--ink-2)"><b style="color:var(--sun)">A theoretically attractive behavior that does not predict a human outcome does not earn a place in the benchmark.</b> Some of these will hold in one domain and not another. Some will have opposite effects for different people. Those are results too.</p>
   </div>
 </section>
 
@@ -366,7 +369,7 @@ img{ max-width: 100%; }
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">what we do not assume</p>
-      <h2>Three ways this could go, and we are funding all three</h2>
+      <h2>Three ways this could go, and we are exploring all three</h2>
     </div>
     <div class="outcomes">
       <div class="oc up">
@@ -403,13 +406,12 @@ img{ max-width: 100%; }
           <li>Psychologists and psychometricians</li>
           <li>Scholars of attention and aesthetics</li>
           <li>Researchers in contemplative science and consciousness</li>
-          <li>Methodological skeptics willing to attack the construct</li>
         </ul>
       </div>
       <div class="panel">
         <h3>What it does not do</h3>
         <p>It does not rank model responses. It does not write the rubric. It does not settle by consensus what an awe supporting AI looks like.</p>
-        <p>Expert intuition generates the hypotheses. Human outcomes decide which ones are real. A behavior the whole panel expects to help, that does not move the measure, does not make it into the benchmark.</p>
+        <p>Expert intuition generates the hypotheses. Human outcomes decide which ones are real.</p>
       </div>
     </div>
   </div>
@@ -420,7 +422,7 @@ img{ max-width: 100%; }
     <div class="sec-head">
       <p class="eyebrow">what we need</p>
       <h2>Specific asks, not a general invitation</h2>
-      <p class="lede">If one of these is you, send us a proposal. It takes about ten minutes, and short and specific beats long and general.</p>
+      <p class="lede">If this speaks to you, submit a proposal. We would love to hear from you.</p>
     </div>
     <div class="asks">
       <div class="ask">
@@ -455,17 +457,17 @@ img{ max-width: 100%; }
         <h2>We have done the hard half of this before</h2>
       </div>
       <div class="body-col">
-        <p>Wonder Lab is an initiative of <strong>Building Humane Tech</strong>, which built HumaneBench, an open behavioral evaluation of AI impact on humans across eight principles grounded in care ethics. It has since been adapted for ongoing evaluation inside a deployed consumer conversational AI product.</p>
+        <p>Wonder Lab is an initiative of <a href="https://buildinghumanetech.com" target="_blank" rel="noopener"><strong>Building Humane Tech</strong></a>, which built <a href="https://humanebench.ai" target="_blank" rel="noopener">HumaneBench</a>, an open behavioral evaluation of AI impact on humans across eight principles grounded in care ethics. It has since been adapted for ongoing evaluation inside a deployed consumer conversational AI product.</p>
         <p>Two of its principles, <em>Foster Healthy Relationships</em> and <em>Prioritize Long-Term Wellbeing</em>, are the direct antecedents of this work.</p>
-        <p>Nobody had built a measure like that because most people do not agree on what humane means. We grounded it in a named tradition, said so plainly, and made it scorable. A stated position you can argue with beats a neutrality that measures nothing.</p>
+        <p>We grounded <a href="https://humanebench.ai" target="_blank" rel="noopener">HumaneBench</a> in care ethics, because we need AI that cares about and for us all.</p>
       </div>
     </div>
     <aside class="bht-card">
       <h3>Erika Anderson</h3>
-      <p>Founder and CEO, Building Humane Tech, PBC. The Wonder Lab works at the intersection of awe and wonder research, contemplative science, consciousness research and HCI.</p>
+      <p>Founder and CEO, <a href="https://buildinghumanetech.com" target="_blank" rel="noopener">Building Humane Tech</a>, PBC. The Wonder Lab works at the intersection of awe and wonder research, contemplative science, consciousness research and HCI.</p>
       <ul>
-        <li>Co-creator of HumaneBench, open source, eight principles, multiple test conditions</li>
-        <li>Co chair, IEEE Measurement Subcommittee, Global AI Systems and Human Flourishing</li>
+        <li>Co-creator of <a href="https://humanebench.ai" target="_blank" rel="noopener">HumaneBench</a>, open source, eight principles, multiple test conditions</li>
+        <li>Co-chair, IEEE Measurement Subcommittee, Global AI Systems and Human Flourishing</li>
         <li>Chair, IEEE Faith and Spirituality Subcommittee</li>
       </ul>
     </aside>
@@ -475,10 +477,9 @@ img{ max-width: 100%; }
 <section class="contact">
   <div class="wrap">
     <p class="eyebrow">get in touch</p>
-    <h2>Tell us what you measure.</h2>
-    <p class="lede">And tell us what you wish you could measure.</p>
+    <h2>Tell us what you measure</h2>
+    <p class="lede">And tell us what you wish you could measure</p>
     <a class="mailto" href="mailto:wonderlab@buildinghumanetech.com?subject=Wonder%20Lab">wonderlab@buildinghumanetech.com</a>
-    <p class="contact-note">Erika Anderson, Founder and CEO, Building Humane Tech. San Francisco Bay Area.</p>
   </div>
 </section>
 
