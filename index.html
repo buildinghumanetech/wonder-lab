@@ -88,8 +88,8 @@ img{display:block}
 .btn:focus-visible,a:focus-visible{outline:2px solid var(--sun-bright);outline-offset:3px}
 
 /* sections */
-section{padding-block:clamp(38px,4vw,58px)}
-.sec-head{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+section{padding-block:clamp(18px,2vw,28px)}
+.sec-head{display:flex;flex-direction:column;gap:9px;margin-bottom:18px}
 .sec-head h2{font-size:clamp(1.6rem,2.9vw,2.3rem);line-height:1.16;max-width:26ch;font-weight:600}
 .lede{font-size:clamp(1.01rem,1.25vw,1.13rem);color:var(--ink-2);max-width:var(--readw)}
 .body-col{display:flex;flex-direction:column;gap:17px;max-width:var(--readw);color:var(--ink-2)}
@@ -164,15 +164,15 @@ section{padding-block:clamp(38px,4vw,58px)}
 .panel li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--sun-bright)}
 
 /* asks */
-.asks{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:24px}
+.asks{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:20px}
 .ask-cta{display:flex;flex-wrap:wrap;align-items:center;gap:16px 20px;margin-top:24px}
 .btn-solid{background:var(--ink);color:var(--sky-0);border-color:var(--ink)}
 .btn-solid:hover{background:var(--sun);border-color:var(--sun);color:#231301}
-.ask{background:var(--card);padding:22px clamp(18px,2.6vw,28px);display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start}
-.ask .who{font-family:var(--mono);font-size:.67rem;letter-spacing:.11em;text-transform:uppercase;color:var(--sun);min-width:13ch;padding-top:4px}
-.ask .what{font-size:.96rem;color:var(--ink-2);line-height:1.55}
+.ask{background:var(--card);padding:16px clamp(16px,2.2vw,24px);display:grid;grid-template-columns:14ch 1fr;gap:6px 22px;align-items:baseline}
+.ask .who{font-family:var(--mono);font-size:.67rem;letter-spacing:.08em;text-transform:uppercase;color:var(--sun);line-height:1.5;text-wrap:balance}
+.ask .what{font-size:.95rem;color:var(--ink-2);line-height:1.55;max-width:60ch}
 .ask .what b{color:var(--ink);font-weight:500}
-@media (max-width:660px){.ask{grid-template-columns:1fr;gap:8px}.ask .who{padding-top:0}}
+@media (max-width:760px){.ask{grid-template-columns:1fr;gap:5px;align-items:start}.ask .what{max-width:none}}
 
 /* parent */
 .parent{background:var(--sky-1);border-block:1px solid var(--line)}
