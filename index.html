@@ -160,14 +160,6 @@ section{padding-block:clamp(26px,2.8vw,39px)}
 .hyp-caption b{color:var(--sun-bright);font-weight:500}
 
 
-/* panels */
-.panels{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:24px;margin-top:22px}
-.panel{border:1px solid var(--deep-line);padding:24px;display:flex;flex-direction:column;gap:12px}
-.panel h3{font-size:1.04rem;color:var(--deep-ink)}
-.panel p{font-size:.92rem;color:var(--deep-ink-2);line-height:1.54}
-.panel ul{margin:0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:7px}
-.panel li{font-size:.88rem;color:var(--deep-ink-2);padding-left:16px;position:relative}
-.panel li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--sun-bright)}
 
 /* asks */
 .asks{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:20px}
@@ -278,7 +270,7 @@ img{ max-width: 100%; }
       <div class="step" style="border-color:var(--line)">
         <span class="n" style="color:var(--sun)">01 &middot; construct</span>
         <h3 style="color:var(--ink)">Define and pre-register</h3>
-        <p style="color:var(--ink-2)">Anchor in established theory and validated measurement. Specify primary and secondary human outcomes, candidate model behaviors, conditions and hypotheses before any outcome analysis.</p>
+        <p style="color:var(--ink-2)">Anchor in established theory and validated measurement. Specify outcomes, candidate model behaviors, conditions and hypotheses before any outcome analysis. Expert intuition generates the hypotheses. Human outcomes decide which ones survive.</p>
       </div>
       <div class="step" style="border-color:var(--line)">
         <span class="n" style="color:var(--sun)">02 &middot; human measurement</span>
@@ -338,7 +330,7 @@ img{ max-width: 100%; }
     <div class="sec-head">
       <p class="eyebrow">candidate behaviors</p>
       <h2>What we want to explore</h2>
-      <p class="lede wide">Our initial hypotheses. We want to find out whether models can do any of this, and under what conditions.</p>
+      <p class="lede wide">Our initial hypotheses. We want to find out whether models can do any of this, under what conditions, and where they do the opposite instead.</p>
     </div>
     <div class="hyp" style="background:var(--card);border-color:var(--line)">
       <div class="hyp-row" style="border-bottom-color:var(--line)"><span class="i" style="color:var(--sun)">01</span><span class="t" style="color:var(--ink-2)"><b style="color:var(--ink)">Preserves the need for accommodation</b> rather than prematurely resolving what the person is encountering.</span></div>
@@ -352,38 +344,12 @@ img{ max-width: 100%; }
   </div>
 </section>
 
-<section class="deep">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">the expert panel</p>
-      <h2>The panel writes the hypotheses. People decide.</h2>
-      <p class="lede">An interdisciplinary working group translates the literature into testable hypotheses and protects construct validity.</p>
-    </div>
-    <div class="panels">
-      <div class="panel">
-        <h3>Who is on it</h3>
-        <ul>
-          <li>Researchers in awe and wonder</li>
-          <li>Psychologists and psychometricians</li>
-          <li>Scholars of attention and aesthetics</li>
-          <li>Researchers in contemplative science and consciousness</li>
-        </ul>
-      </div>
-      <div class="panel">
-        <h3>What it does not do</h3>
-        <p>It does not rank model responses. It does not write the rubric. It does not settle by consensus what an awe supporting AI looks like.</p>
-        <p>Expert intuition generates the hypotheses. Human outcomes decide which ones are real.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section id="collaborate">
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">what we need</p>
-      <h2>Specific asks, not a general invitation</h2>
-      <p class="lede">If this speaks to you, reach out. Funders, we&rsquo;d love to hear from you via email.</p>
+      <h2>Who we want on the ride</h2>
+      <p class="lede">Phase one is construct definition and pre registration. Once it is written, the design is fixed. These are the people who can still change it.</p>
     </div>
     <div class="asks">
       <div class="ask">
@@ -399,12 +365,17 @@ img{ max-width: 100%; }
         <span class="what">You can run <b>in person sessions with participants</b>, and ideally physiological measures alongside self report. We bring the protocol and the stimuli.</span>
       </div>
       <div class="ask">
+        <span class="who">Expert panel</span>
+        <span class="what">You would help <b>translate the literature into testable hypotheses</b> and protect construct validity. The panel does not rank model responses or write the rubric. It generates what we test; human outcomes decide what survives.</span>
+      </div>
+      <div class="ask">
         <span class="who">Funders</span>
-        <span class="what">Contemplative science foundations and AI safety programs. Email <a href="mailto:wonderlab@buildinghumanetech.com?subject=Funding%20the%20Wonder%20Lab&amp;body=Hi%0A%0AI%27d%20like%20to%20explore%20funding%20the%20Wonder%20Lab%20for%20%0A%0A">wonderlab@buildinghumanetech.com</a></span>
+        <span class="what">Contemplative science foundations and AI safety programs. Funding puts the human study at the center of the design instead of the edge of it.</span>
       </div>
     </div>
     <div class="ask-cta">
       <a class="btn btn-solid" href="https://docs.google.com/forms/d/e/1FAIpQLSdGJB4a_S9-xG_puVZ0Wa8KQLTA0uYhv0zt3GvbJESf4J0fHg/viewform" target="_blank" rel="noopener">Submit a proposal</a>
+      <a class="btn btn-line" href="mailto:wonderlab@buildinghumanetech.com?subject=Wonder%20Lab">Email us</a>
     </div>
 
   </div>
@@ -418,7 +389,7 @@ img{ max-width: 100%; }
         <h2>We have done the hard half of this before</h2>
       </div>
       <div class="body-col">
-        <p>Wonder Lab is an initiative of <a href="https://buildinghumanetech.com" target="_blank" rel="noopener"><strong>Building Humane Tech</strong></a>, which built <a href="https://humanebench.ai" target="_blank" rel="noopener">HumaneBench</a>, an open behavioral evaluation of AI impact on humans across eight principles grounded in care ethics. It has since been adapted for ongoing evaluation inside a deployed consumer conversational AI products.</p>
+        <p>Wonder Lab is an initiative of <a href="https://buildinghumanetech.com" target="_blank" rel="noopener"><strong>Building Humane Tech</strong></a>, which built <a href="https://humanebench.ai" target="_blank" rel="noopener">HumaneBench</a>, an open evaluation of how AI systems treat the people using them, scored against eight principles grounded in care ethics. It has since been adapted for ongoing evaluation inside deployed consumer conversational AI products.</p>
         <p>Two of its principles, <em>Foster Healthy Relationships</em> and <em>Prioritize Long-Term Wellbeing</em>, are the direct antecedents of this work.</p>
       </div>
     </div>
@@ -437,8 +408,8 @@ img{ max-width: 100%; }
 <section class="contact">
   <div class="wrap">
     <p class="eyebrow">get in touch</p>
-    <h2>Tell us what you measure</h2>
-    <p class="lede">And tell us what you wish you could measure</p>
+    <h2>Reach for the ceiling</h2>
+    <p class="lede">What would you measure that nobody is measuring? Let us know what you&rsquo;re exploring.</p>
     <a class="mailto" href="mailto:wonderlab@buildinghumanetech.com?subject=Wonder%20Lab">wonderlab@buildinghumanetech.com</a>
   </div>
 </section>
