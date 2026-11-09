@@ -1,6 +1,6 @@
 # Wonder Lab
 
-The website for Wonder Lab, a Building Humane Tech research direction on whether AI interaction changes awe and self-transcendent experience.
+The website for Wonder Lab, a Building Humane Tech research organization incubated at Building Humane Tech. Tagline: AI Safety for the Soul.
 
 This repository is the website only. It is a static site: `index.html`, images, and a `CNAME` for the domain.
 
