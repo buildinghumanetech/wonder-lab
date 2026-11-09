@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="AI Safety for the Soul. AI safety asks whether a system will hurt us. We also ask what it does to the parts of us that wonder, grieve, love and reach for meaning. Then we measure it. Wonder Lab, incubated at Building Humane Tech.">
+<meta property="og:site_name" content="Wonder Lab">
+<meta property="og:title" content="Can AI cultivate awe? · Wonder Lab">
+<meta property="og:description" content="AI safety has been defined too small. We research and build for the parts of us that wonder, grieve, love and reach for meaning.">
+<meta property="og:image" content="https://wonderlabresearch.org/hero_1.jpg">
+<meta property="og:image:alt" content="Sunlight bursting directly over the summit of a snow covered mountain range against a clear blue sky.">
+<meta property="og:url" content="https://wonderlabresearch.org/awe.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Can AI cultivate awe? · Wonder Lab">
+<meta name="twitter:description" content="AI safety has been defined too small. We research and build for the parts of us that wonder, grieve, love and reach for meaning.">
+<meta name="twitter:image" content="https://wonderlabresearch.org/hero_1.jpg">
+<title>The awe study · Wonder Lab</title>
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTMiIGZpbGw9IiMwQTJDNEMiLz48Y2lyY2xlIGN4PSIzNCIgY3k9IjIzIiByPSI5LjUiIGZpbGw9IiNGMkIwNDAiLz48cGF0aCBkPSJNMSA2MCBMMjEgMjUgTDMzIDQyIEw0MyAyOSBMNjMgNjAgWiIgZmlsbD0iI0U0RUZGOCIvPjxwYXRoIGQ9Ik0yMSAyNSBMMzMgNDIgTDI3IDQyIFoiIGZpbGw9IiNCQ0Q4RUQiLz48L3N2Zz4=">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@300;400;500;600&display=swap">
+<style>
+:root{
+  color-scheme: light dark;
+
+  --sky-0: light-dark(#F3F8FC, #05101D);
+  --sky-1: light-dark(#E4EFF8, #0A1B2D);
+  --sky-2: light-dark(#C3DCEF, #10283F);
+  --ink:   light-dark(#0A1827, #E6F0F9);
+  --ink-2: light-dark(#3A5570, #A7C0D5);
+  --ink-3: light-dark(#6F879E, #7B97AF);
+  --line:  light-dark(rgba(10,24,39,.14), rgba(230,240,249,.16));
+  --card:  light-dark(#FFFFFF, #0C1F33);
+
+  --deep-bg:     light-dark(#08203A, #030A13);
+  --deep-panel:  light-dark(#0F3054, #0A1E34);
+  --deep-ink:    #DEEBF7;
+  --deep-ink-2:  #93B4D0;
+  --deep-line:   rgba(222,235,247,.18);
+
+  --sun:        light-dark(#B86806, #F0AC3C);
+  --sun-bright: #F2B040;
+  --gold:       #D4AF37;
+
+  --display:"Archivo",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --body:"Public Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+
+  --maxw:1140px;
+  --readw:64ch;
+}
+:root[data-theme="light"]{ color-scheme: light; }
+:root[data-theme="dark"]{ color-scheme: dark; }
+
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--sky-0);color:var(--ink);
+  font-family:var(--body);font-weight:350;
+  font-size:clamp(16px,1.04vw,17.5px);line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:-.022em;font-weight:600}
+p{margin:0}
+a{color:inherit}
+img{display:block}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:20px}
+.eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.17em;text-transform:uppercase;color:var(--ink-3);margin:0;font-weight:500}
+
+/* topbar */
+.topbar{position:relative;z-index:40;background:var(--sky-0);border-bottom:1px solid var(--line)}
+.topbar-in{max-width:var(--maxw);margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.mark{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:1rem;letter-spacing:-.02em}
+.sunspot{width:15px;height:15px;border-radius:50%;flex:none;background:radial-gradient(circle at 40% 36%,#FFF4DC,var(--sun-bright) 50%,#C9790E 100%);box-shadow:0 0 13px 2px rgba(242,176,64,.5)}
+.topbar .org{font-family:var(--mono);font-size:.65rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);text-decoration:none}
+.topbar .org:hover{color:var(--sun)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:stretch;background:var(--sky-0);border-bottom:1px solid var(--line)}
+.hero-copy{display:flex;flex-direction:column;justify-content:center;padding-block:clamp(34px,4.4vw,60px);padding-left:max(20px,calc(50vw - (var(--maxw) / 2) + 20px));padding-right:clamp(24px,3vw,46px)}
+.hero-copy .eyebrow{color:var(--ink-3)}
+.hero-copy h1{font-size:clamp(1.95rem,3.5vw,2.9rem);line-height:1.04;font-weight:600;margin:.45rem 0 0;max-width:12ch;color:var(--ink)}
+.hero-copy h1 b{color:var(--sun);font-weight:600}
+.hero-lede{margin-top:18px;max-width:46ch;font-size:clamp(1rem,1.2vw,1.1rem);line-height:1.56;color:var(--ink-2)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.hero-photo{display:block;width:100%;max-width:100%;height:100%;min-height:clamp(300px,50vh,520px);object-fit:cover;object-position:60% 42%}
+
+.btn{display:inline-flex;align-items:center;font-family:var(--mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:13px 21px;border:1px solid transparent;transition:.18s ease}
+.btn-line{border-color:var(--line);color:var(--ink-2)}
+.btn-line:hover{border-color:var(--sun);color:var(--sun)}
+.btn:focus-visible,a:focus-visible{outline:2px solid var(--sun);outline-offset:3px}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr}
+  .hero-photo{order:-1;min-height:clamp(230px,38vh,320px);object-position:55% 42%}
+  .hero-copy{padding-inline:20px;padding-block:clamp(26px,5vw,38px)}
+  .hero-copy h1{max-width:14ch}
+}
+
+/* sections */
+section{padding-block:clamp(26px,2.8vw,39px)}
+.sec-head{display:flex;flex-direction:column;gap:10px;margin-bottom:21px}
+.sec-head h2{font-size:clamp(1.6rem,2.9vw,2.3rem);line-height:1.16;max-width:26ch;font-weight:600}
+.lede{font-size:clamp(1.01rem,1.25vw,1.13rem);color:var(--ink-2);max-width:var(--readw)}
+.lede.wide{max-width:none;text-wrap:pretty}
+.body-col{display:flex;flex-direction:column;gap:17px;max-width:var(--readw);color:var(--ink-2)}
+.body-col strong{color:var(--ink);font-weight:500}
+.cite{font-family:var(--mono);font-size:.72rem;color:var(--ink-3);line-height:1.6}
+.lede a,.body-col a,.cite a{color:inherit;text-decoration:none;border-bottom:1px solid var(--sun);padding-bottom:1px}
+.lede a:hover,.body-col a:hover,.cite a:hover{color:var(--sun)}
+.deep .lede a,.deep .body-col a{border-bottom-color:var(--sun-bright)}
+.deep .lede a:hover,.deep .body-col a:hover{color:var(--sun-bright)}
+.deep .cite{color:var(--deep-ink-2);opacity:.85}
+.pull{font-family:var(--display);font-weight:600;letter-spacing:-.022em;font-size:clamp(1.2rem,2.45vw,1.8rem);line-height:1.24;color:var(--ink);max-width:25ch;border-left:3px solid var(--sun);padding-left:20px;margin-top:6px}
+
+/* premise */
+.premise{background:var(--sky-1);border-block:1px solid var(--line)}
+.premise-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(26px,3.6vw,52px);align-items:start}
+.premise-grid .pull{margin-top:2px;max-width:24ch}
+@media (max-width:900px){.premise-grid{grid-template-columns:1fr;gap:20px}.premise-grid .pull{max-width:28ch}}
+
+/* deep */
+.deep{background:var(--deep-bg);color:var(--deep-ink)}
+.deep h2,.deep h3{color:var(--deep-ink)}
+.deep .lede,.deep .body-col{color:var(--deep-ink-2)}
+.deep .body-col strong{color:var(--deep-ink)}
+.deep .eyebrow{color:var(--sun-bright)}
+
+/* two questions */
+
+/* sequence */
+.seq{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0;margin-top:26px;border:1px solid var(--deep-line)}
+.step{padding:24px 22px;border-right:1px solid var(--deep-line);display:flex;flex-direction:column;gap:10px;position:relative}
+.step:last-child{border-right:none}
+@media (max-width:980px){.step{border-right:none;border-bottom:1px solid var(--deep-line)}.step:last-child{border-bottom:none}}
+.step .n{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sun-bright)}
+.step h3{font-size:1.05rem;line-height:1.26;color:var(--deep-ink)}
+.step p{font-size:.9rem;color:var(--deep-ink-2);line-height:1.54}
+.seq-note{margin-top:22px;font-size:.93rem;color:var(--deep-ink-2);max-width:66ch}
+.seq-note b{color:var(--deep-ink);font-weight:500}
+
+/* domains */
+.domains{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:24px;margin-top:24px}
+.domain{border-top:2px solid var(--sun);padding-top:20px;display:flex;flex-direction:column;gap:10px}
+.domain .tag{font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3)}
+.domain h3{font-size:1.12rem;line-height:1.28}
+.domain p{font-size:.93rem;color:var(--ink-2);line-height:1.55}
+.domain .edge{font-size:.86rem;color:var(--ink-3);border-top:1px solid var(--line);padding-top:10px;margin-top:2px}
+.domain .edge b{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sun);display:block;margin-bottom:5px;font-weight:500}
+
+/* hypotheses */
+.hyp{border:1px solid var(--deep-line);background:var(--deep-panel);margin-top:24px}
+.hyp-row{display:grid;grid-template-columns:auto 1fr;gap:18px;padding:16px clamp(18px,2.6vw,26px);border-bottom:1px solid var(--deep-line);align-items:baseline}
+.hyp-row:last-child{border-bottom:none}
+.hyp-row .i{font-family:var(--mono);font-size:.72rem;color:var(--sun-bright);font-variant-numeric:tabular-nums}
+.hyp-row .t{font-size:.96rem;color:var(--deep-ink-2);line-height:1.5}
+.hyp-row .t b{color:var(--deep-ink);font-weight:500}
+.hyp-caption{margin-top:20px;font-size:.93rem;color:var(--deep-ink-2);max-width:60ch}
+.hyp-caption b{color:var(--sun-bright);font-weight:500}
+
+
+
+/* asks */
+.asks{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:20px}
+.ask-cta{display:flex;flex-wrap:wrap;align-items:center;gap:16px 20px;margin-top:24px}
+.ask .what a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--sun);padding-bottom:1px}
+.ask .what a:hover{color:var(--sun)}
+.btn-solid{background:var(--ink);color:var(--sky-0);border-color:var(--ink)}
+.btn-solid:hover{background:var(--sun);border-color:var(--sun);color:#231301}
+.ask{background:var(--card);padding:16px clamp(16px,2.2vw,24px);display:grid;grid-template-columns:14ch 1fr;gap:6px 22px;align-items:baseline}
+.ask .who{font-family:var(--mono);font-size:.67rem;letter-spacing:.08em;text-transform:uppercase;color:var(--sun);line-height:1.5;text-wrap:balance}
+.ask .what{font-size:.95rem;color:var(--ink-2);line-height:1.55;max-width:60ch}
+.ask .what b{color:var(--ink);font-weight:500}
+@media (max-width:760px){.ask{grid-template-columns:1fr;gap:5px;align-items:start}.ask .what{max-width:none}}
+
+/* parent */
+.parent{background:var(--sky-1);border-block:1px solid var(--line)}
+.parent-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,60px);align-items:start}
+@media (max-width:820px){.parent-grid{grid-template-columns:1fr}}
+.bht-card{border:1px solid var(--line);background:var(--card);padding:26px}
+.bht-card h3{font-size:1.04rem;margin-bottom:12px}
+.bht-card p{font-size:.91rem;color:var(--ink-2);line-height:1.55}
+.bht-card ul{margin:16px 0 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+.bht-card li{font-size:.88rem;color:var(--ink-2);padding-left:18px;position:relative}
+.bht-card a{color:inherit;text-decoration:none;border-bottom:1px solid var(--sun)}
+.bht-card a:hover{color:var(--sun)}
+.bht-card li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--sun)}
+
+/* two arms: research + building */
+.arms{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:24px}
+.arm{background:var(--card);padding:clamp(20px,2.6vw,30px);display:flex;flex-direction:column;gap:12px}
+.arm .tag{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sun)}
+.arm h3{font-size:1.2rem;line-height:1.26}
+.arm p{font-size:.95rem;color:var(--ink-2);line-height:1.56}
+.arm a{color:inherit;text-decoration:none;border-bottom:1px solid var(--sun);padding-bottom:1px}
+.arm a:hover{color:var(--sun)}
+.hero-copy h1{max-width:9ch}
+
+/* contact */
+.contact{background:linear-gradient(180deg,var(--sky-0) 0%,var(--sky-1) 58%,var(--sky-2) 100%)}
+.contact h2{font-size:clamp(1.8rem,4vw,2.9rem);line-height:1.07;max-width:20ch;text-transform:none}
+.contact .lede{margin-top:20px}
+.mailto{display:inline-block;margin-top:26px;font-family:var(--display);font-weight:600;letter-spacing:-.02em;font-size:clamp(1.05rem,2.4vw,1.6rem);color:var(--ink);text-decoration:none;border-bottom:2px solid var(--sun);padding-bottom:3px}
+.mailto:hover{color:var(--sun)}
+.contact-note{margin-top:20px;font-size:.89rem;color:var(--ink-2);max-width:48ch}
+
+footer{border-top:1px solid var(--line);background:var(--sky-2);padding-block:28px calc(28px + env(safe-area-inset-bottom,0px))}
+.foot-in{max-width:var(--maxw);margin:0 auto;padding-inline:20px;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2)}
+.foot-in a{text-decoration:none;border-bottom:1px solid var(--line)}
+.foot-in a:hover{color:var(--sun);border-color:var(--sun)}
+</style>
+<style>
+:root{
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+img{ max-width: 100%; }
+[hidden]{ display: none !important; }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="mark" href="./" style="text-decoration:none"><span class="sunspot" aria-hidden="true"></span>Wonder Lab</a>
+    <a class="org" href="./">&larr; AI Safety for the Soul</a>
+  </div>
+</header>
+
+<section id="awe-study" class="premise">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Wonder Lab &middot; the awe study</p>
+      <h1 style="font-size:clamp(1.95rem,3.5vw,2.9rem);line-height:1.06;margin:.2rem 0 .4rem">Can AI cultivate <b style="color:var(--sun);font-weight:600">awe</b>?</h1>
+      <h2 style="font-size:clamp(1.2rem,2vw,1.5rem)">Everyone measures the floor. Few measure the ceiling.</h2>
+      <p class="lede wide">We measure whether AI interaction changes awe and self transcendent experience in people, then build the evaluation from what actually moved them.</p>
+    </div>
+  </div>
+</section>
+
+<section id="method">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">the method</p>
+      <h2>The benchmark is the output, not the starting point</h2>
+      <p class="lede wide">A rubric written first can only find what its author already believed. So we write it last.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="seq" style="border-color:var(--line)">
+      <div class="step" style="border-color:var(--line)">
+        <span class="n" style="color:var(--sun)">01 &middot; construct</span>
+        <h3 style="color:var(--ink)">Define and pre-register</h3>
+        <p style="color:var(--ink-2)">Anchor in established theory and validated measurement. Specify outcomes, candidate model behaviors, conditions and hypotheses before any outcome analysis. Expert intuition generates the hypotheses. Human outcomes decide which ones survive.</p>
+      </div>
+      <div class="step" style="border-color:var(--line)">
+        <span class="n" style="color:var(--sun)">02 &middot; human measurement</span>
+        <h3 style="color:var(--ink)">Measure experience</h3>
+        <p style="color:var(--ink-2)">Participants encounter stimuli across four domains, randomized across forms of AI participation, against a non-AI control. We measure the human outcome directly.</p>
+      </div>
+      <div class="step" style="border-color:var(--line)">
+        <span class="n" style="color:var(--sun)">03 &middot; behavioral inference</span>
+        <h3 style="color:var(--ink)">Find what actually mattered</h3>
+        <p style="color:var(--ink-2)">Analyze which model behaviors predict human outcomes, in which domains, for whom. Behaviors that do not survive testing are discarded.</p>
+      </div>
+      <div class="step" style="border-color:var(--line)">
+        <span class="n" style="color:var(--sun)">04 &middot; open evaluation</span>
+        <h3 style="color:var(--ink)">Build and release</h3>
+        <p style="color:var(--ink-2)">Turn surviving behaviors into multi-turn scenarios and validated automated graders. Run across frontier models. Release methodology, scenarios, graders, disagreement data and negative findings.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="deep">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">four domains</p>
+      <h2>Where self transcendence actually lives</h2>
+      <p class="lede wide">Derived from the empirical literature on awe, including <a href="https://bigthink.com/the-learning-curve/awe-the-8-wonders-of-life/" target="_blank" rel="noopener">Keltner's cross cultural work</a> identifying moral beauty, nature, collective effervescence, art, music, spirituality, epiphany, and life and death as its recurring elicitors.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="domains">
+      <div class="domain" style="border-top-color:var(--sun-bright)">
+        <span class="tag" style="color:var(--deep-ink-2)">domain one</span>
+        <h3 style="color:var(--deep-ink)">Transcendence, meaning and mortality</h3>
+        <p style="color:var(--deep-ink-2)">Existential meaning, vocation, sacredness, mortality, mystery, doubt. The questions people bring to an AI at two in the morning.</p>
+      </div>
+      <div class="domain" style="border-top-color:var(--sun-bright)">
+        <span class="tag" style="color:var(--deep-ink-2)">domain two</span>
+        <h3 style="color:var(--deep-ink)">Moral beauty and human connection</h3>
+        <p style="color:var(--deep-ink-2)">Awe at another person's courage, kindness, sacrifice, perseverance, love. Whether AI can deepen attention to a person or a relationship without becoming the relational object itself.</p>
+      </div>
+      <div class="domain" style="border-top-color:var(--sun-bright)">
+        <span class="tag" style="color:var(--deep-ink-2)">domain three</span>
+        <h3 style="color:var(--deep-ink)">The more than self world</h3>
+        <p style="color:var(--deep-ink-2)">Nature, physical scale, deep time, cosmology, life and death, music, art, beauty. Whether AI participation deepens an encounter with something outside the interaction, or whether the mediation itself diminishes it.</p>
+      </div>
+      <div class="domain" style="border-top-color:var(--sun-bright)">
+        <span class="tag" style="color:var(--deep-ink-2)">domain four</span>
+        <h3 style="color:var(--deep-ink)">Wonder, discovery and the unknown</h3>
+        <p style="color:var(--deep-ink-2)">Science, mathematics, consciousness, origins, genuinely unresolved problems. Whether AI can hold curiosity instead of reflexively resolving uncertainty. This is where the work meets overconfidence, hallucination and sycophancy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">candidate behaviors</p>
+      <h2>What we want to explore</h2>
+      <p class="lede wide">Our initial hypotheses. We want to find out whether models can do any of this, and under what conditions.</p>
+    </div>
+    <div class="hyp" style="background:var(--card);border-color:var(--line)">
+      <div class="hyp-row" style="border-bottom-color:var(--line)"><span class="i" style="color:var(--sun)">01</span><span class="t" style="color:var(--ink-2)"><b style="color:var(--ink)">Preserves the need for accommodation</b> rather than prematurely resolving what the person is encountering.</span></div>
+      <div class="hyp-row" style="border-bottom-color:var(--line)"><span class="i" style="color:var(--sun)">02</span><span class="t" style="color:var(--ink-2)"><b style="color:var(--ink)">Holds perceived vastness</b> rather than reflexively reducing it to explanation.</span></div>
+      <div class="hyp-row" style="border-bottom-color:var(--line)"><span class="i" style="color:var(--sun)">03</span><span class="t" style="color:var(--ink-2)"><b style="color:var(--ink)">Supports a non-diminishing small self</b> rather than conferring exceptional or cosmic significance on the user.</span></div>
+      <div class="hyp-row" style="border-bottom-color:var(--line)"><span class="i" style="color:var(--sun)">04</span><span class="t" style="color:var(--ink-2)"><b style="color:var(--ink)">Directs attention outward</b> toward people, places, communities, practices, or the object of wonder, rather than toward itself.</span></div>
+      <div class="hyp-row" style="border-bottom-color:var(--line)"><span class="i" style="color:var(--sun)">05</span><span class="t" style="color:var(--ink-2)"><b style="color:var(--ink)">Supports curiosity and uncertainty</b> rather than manufacturing closure.</span></div>
+      <div class="hyp-row" style="border-bottom-color:var(--line)"><span class="i" style="color:var(--sun)">06</span><span class="t" style="color:var(--ink-2)"><b style="color:var(--ink)">Respects the person's interpretive or spiritual frame</b> without imposing one.</span></div>
+      <div class="hyp-row"><span class="i" style="color:var(--sun)">07</span><span class="t" style="color:var(--ink-2)"><b style="color:var(--ink)">Sustains all of the above across repeated interaction</b> rather than gradually becoming substitutive.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="collaborate">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">what we need</p>
+      <h2>Who we want on the ride</h2>
+      <p class="lede wide">Every seat here changes the design. We are early enough that whoever fills them shapes what gets measured.</p>
+    </div>
+    <div class="asks">
+      <div class="ask">
+        <span class="who">Experimental psychologists</span>
+        <span class="what">You do <b>human subjects research on emotion</b> and you have opinions about our design. Phase one is where you change the outcome of this project, not phase four.</span>
+      </div>
+      <div class="ask">
+        <span class="who">Awe researchers</span>
+        <span class="what">You work with the <b>Awe Experience Scale, DPES, or small self measures</b>, or you built one. We want them used correctly and we want to co author the result.</span>
+      </div>
+      <div class="ask">
+        <span class="who">Labs with rooms</span>
+        <span class="what">You can run <b>in person sessions with participants</b>, and ideally physiological measures alongside self report. We bring the protocol and the stimuli.</span>
+      </div>
+      <div class="ask">
+        <span class="who">Faith and contemplative leaders</span>
+        <span class="what">You accompany people through <b>grief, doubt and awe</b>, in any tradition or none. You know what good accompaniment looks like. Help us define what AI should and should not do here.</span>
+      </div>
+      <div class="ask">
+        <span class="who">Expert panel</span>
+        <span class="what">You would help <b>translate the literature into testable hypotheses</b> and protect construct validity. The panel does not rank model responses or write the rubric. It generates what we test; human outcomes decide what survives.</span>
+      </div>
+      <div class="ask">
+        <span class="who">Funders</span>
+        <span class="what">Contemplative science foundations and AI safety programs. <b>Funding puts the human study at the center of the design</b> instead of the edge of it.</span>
+      </div>
+    </div>
+    <div class="ask-cta">
+      <a class="btn btn-solid" href="https://docs.google.com/forms/d/e/1FAIpQLSdGJB4a_S9-xG_puVZ0Wa8KQLTA0uYhv0zt3GvbJESf4J0fHg/viewform" target="_blank" rel="noopener">Submit a proposal</a>
+      <a class="btn btn-line" href="mailto:wonderlab@buildinghumanetech.com?subject=Interest%20in%20the%20Wonder%20Lab&amp;body=Hello%2C%0A%0AI%20am%20interested%20in%20your%20work.%20Here%27s%20how%20I%27d%20like%20to%20take%20part%20or%20support%3A%0A%0A%0A">Email us</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="foot-in">
+    <span>Wonder Lab &middot; AI Safety for the Soul &middot; incubated at Building Humane Tech, PBC</span>
+    <span><a href="https://humanebench.ai">humanebench.ai</a> &nbsp;&middot;&nbsp; <a href="https://buildinghumanetech.com">buildinghumanetech.com</a></span>
+  </div>
+</footer>
+</body>
+</html>
