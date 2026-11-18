@@ -218,6 +218,21 @@ footer{border-top:1px solid var(--line);background:var(--sky-2);padding-block:28
 img{ max-width: 100%; }
 [hidden]{ display: none !important; }
 </style>
+<style>
+/* large screens: widen the column and scale type so the page fills the screen */
+@media (min-width:1500px){
+  html{font-size:clamp(16px,.86vw,19px)}
+  :root{--maxw:min(82rem,84vw)}
+  body{font-size:1.06rem}
+  .hero-copy h1{font-size:clamp(2.9rem,3.4vw,4.4rem)}
+  .hero-lede{font-size:1.2rem}
+  .hero-photo{min-height:clamp(520px,62vh,760px)}
+  .topbar-in{padding-block:16px}
+}
+/* four domains: 2x2 until there is room for 4 across, never 3 + 1 */
+@media (min-width:700px) and (max-width:1499px){.domains{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1500px){.domains{grid-template-columns:repeat(4,minmax(0,1fr))}}
+</style>
 </head>
 <body>
 <header class="topbar">
