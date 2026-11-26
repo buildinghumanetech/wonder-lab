@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="AI Safety for the Soul. AI safety asks whether a system will hurt us. We also ask what it does to the parts of us that wonder, grieve, love and reach for meaning. Wonder Lab, incubated at Building Humane Tech.">
+<meta name="description" content="Can AI cultivate awe? AI safety asks whether a system will hurt us. We ask what it cultivates: the attention, curiosity and wonder that make us more human. Wonder Lab, incubated at Building Humane Tech.">
 <meta property="og:site_name" content="Wonder Lab">
-<meta property="og:title" content="AI Safety for the Soul">
-<meta property="og:description" content="Safe isn't the same as good for us. We research and build for the parts of us that wonder, grieve, love and reach for meaning.">
+<meta property="og:title" content="Can AI cultivate awe?">
+<meta property="og:description" content="Safe isn't the same as good for us. We research whether AI can cultivate awe, then build open evaluations any lab can run.">
 <meta property="og:image" content="https://wonderlabresearch.org/hero_1.jpg">
 <meta property="og:image:alt" content="Sunlight bursting directly over the summit of a snow covered mountain range against a clear blue sky.">
 <meta property="og:url" content="https://wonderlabresearch.org/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="AI Safety for the Soul">
-<meta name="twitter:description" content="Safe isn't the same as good for us. We research and build for the parts of us that wonder, grieve, love and reach for meaning.">
+<meta name="twitter:title" content="Can AI cultivate awe?">
+<meta name="twitter:description" content="Safe isn't the same as good for us. We research whether AI can cultivate awe, then build open evaluations any lab can run.">
 <meta name="twitter:image" content="https://wonderlabresearch.org/hero_1.jpg">
-<title>Wonder Lab · AI Safety for the Soul</title>
+<title>Wonder Lab · Can AI cultivate awe?</title>
 <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTMiIGZpbGw9IiMwQTJDNEMiLz48Y2lyY2xlIGN4PSIzNCIgY3k9IjIzIiByPSI5LjUiIGZpbGw9IiNGMkIwNDAiLz48cGF0aCBkPSJNMSA2MCBMMjEgMjUgTDMzIDQyIEw0MyAyOSBMNjMgNjAgWiIgZmlsbD0iI0U0RUZGOCIvPjxwYXRoIGQ9Ik0yMSAyNSBMMzMgNDIgTDI3IDQyIFoiIGZpbGw9IiNCQ0Q4RUQiLz48L3N2Zz4=">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -232,6 +232,15 @@ img{ max-width: 100%; }
 /* four domains: 2x2 until there is room for 4 across, never 3 + 1 */
 @media (min-width:700px) and (max-width:1499px){.domains{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (min-width:1500px){.domains{grid-template-columns:repeat(4,minmax(0,1fr))}}
+/* awe-first additions */
+.step h3{font-size:1.12rem}
+.seq-note b{color:var(--deep-ink)}
+.deep .lede a{color:inherit}
+.btn-sun{background:var(--sun-bright);border-color:var(--sun-bright);color:#231301}
+.btn-sun:hover{background:var(--deep-ink);border-color:var(--deep-ink);color:var(--deep-bg)}
+.btn-line-deep{border-color:var(--deep-line);color:var(--deep-ink)}
+.btn-line-deep:hover{border-color:var(--sun-bright);color:var(--sun-bright)}
+@media (min-width:700px){.domains{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
 </style>
 </head>
 <body>
@@ -244,12 +253,12 @@ img{ max-width: 100%; }
 
 <div class="hero">
   <div class="hero-copy">
-    <p class="eyebrow">Wonder Lab &middot; research and building &middot; interfaith</p>
-    <h1>AI safety for the <b>soul</b></h1>
-    <p class="hero-lede">AI safety asks whether a system will hurt us. We also ask what it does to the parts of us that wonder, grieve, love and reach for meaning.</p>
+    <p class="eyebrow">Wonder Lab &middot; awe research &middot; open evaluations</p>
+    <h1>Can AI cultivate <b>awe</b>?</h1>
+    <p class="hero-lede">AI safety asks whether a system will hurt us. We ask what it cultivates: the attention, curiosity and wonder that make us more human.</p>
     <div class="hero-cta">
       <a class="btn btn-solid" href="#collaborate">Work with us</a>
-      <a class="btn btn-line" href="awe.html">See the research</a>
+      <a class="btn btn-line" href="awe.html">See the awe study</a>
     </div>
   </div>
   <img class="hero-photo" src="hero_1.jpg" alt="Sunlight bursting directly over the summit of a snow covered mountain range against a clear blue sky.">
@@ -258,15 +267,16 @@ img{ max-width: 100%; }
 <section class="premise">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">why safety</p>
+      <p class="eyebrow">why this matters</p>
       <h2>Safe isn&rsquo;t the same as good for us.</h2>
     </div>
     <div class="premise-grid">
       <div class="body-col">
-        <p>Roughly <a href="https://imaginingthedigitalfuture.org/reports-and-publications/the-rise-of-ai-companions/" target="_blank" rel="noopener">a quarter</a> of internet using American adults now have social interactions with AI chatbots. Some of those conversations are about wonder, beauty, mortality, meaning, spiritual life and the limits of what we know.</p>
+        <p>About <a href="https://imaginingthedigitalfuture.org/reports-and-publications/the-rise-of-ai-companions/" target="_blank" rel="noopener">a quarter</a> of American adults online now have social conversations with AI chatbots. Some of it is small talk. Some of it is about beauty, about dying, about what any of this means.</p>
         <p>AI safety has concentrated on catastrophe and acute harm. Suicide, psychosis, manipulation, dependency. That work is essential. It now has the laws, the regulators and the litigation behind it.</p>
         <p>But a system can pass every one of those tests and still leave people smaller. Less curious. Less connected. Less able to sit with mystery.</p>
-        <p>Almost nobody measures it. The benchmarks that exist score what a model says. Meaning, spirituality, wonder and transcendence are the least developed territory in AI evaluation.</p>
+        <p>A system only sees what it measures. Clicks, minutes, sentiment. Live inside that long enough and we start to see ourselves the same way. We are not machines.</p>
+        <p>Benchmarks grade what a model says. Very few ask what happens to the person on the other side: whether it opens the aperture of experience or shuts it down.</p>
       </div>
       <p class="pull">If we cannot meet wonder in an AI mediated world, we have lost part of ourselves.</p>
     </div>
@@ -276,10 +286,31 @@ img{ max-width: 100%; }
 <section class="deep">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow">for every tradition, and none</p>
-      <h2>Faith-friendly. Not faith-focused.</h2>
-      <p class="lede">People bring their deepest questions to AI. Some of them pray. Some of them never have. We do not promote a tradition or a belief. We ask whether AI respects the frame a person brings, and whether it turns them back toward their people, practices and communities instead of replacing them.</p>
-      <p class="lede">Awe is our shared language. Nobody objects to wonder.</p>
+      <p class="eyebrow">what AI cultivates</p>
+      <h2>Scaffolding, not substitution.</h2>
+      <p class="lede">Cultures spent centuries building rituals, rites of passage and art to carry people through life&rsquo;s transitions. Technology now does much of that shaping, mostly by accident. We think AI can be built on purpose to support human development, at every stage of life.</p>
+      <p class="lede">No technology is neutral. Every system trains something in us. So we ask three questions.</p>
+    </div>
+    <div class="seq">
+      <div class="step"><span class="n">attention</span><h3>Does it widen what we notice or narrow it?</h3></div>
+      <div class="step"><span class="n">habits and desire</span><h3>Does it build our capacities or our dependence on it?</h3></div>
+      <div class="step"><span class="n">relationship</span><h3>Does it turn us back toward people, places and the living world or stand in for them?</h3></div>
+    </div>
+    <p class="seq-note"><b>Regulation can set limits. It can&rsquo;t set purpose.</b> Purpose comes from culture, and culture is where awe lives.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">why awe</p>
+      <h2>Awe is measurable. So we start there.</h2>
+      <p class="lede">Awe is a well studied self transcendent emotion. <a href="https://doi.org/10.1080/02699930302297" target="_blank" rel="noopener">Keltner and Haidt</a> characterize it through perceived vastness and a need for accommodation: something so large it makes you update how you see the world.</p>
+    </div>
+    <div class="domains">
+      <div class="domain"><h3>Established theory</h3><p>Vastness and accommodation give us a construct, not a vibe.</p></div>
+      <div class="domain"><h3>Validated instruments</h3><p>The <a href="https://doi.org/10.1080/17439760.2018.1484940" target="_blank" rel="noopener">Awe Experience Scale</a> and <a href="https://doi.org/10.1037/pspi0000018" target="_blank" rel="noopener">small self</a> measures score what people actually feel.</p></div>
+      <div class="domain"><h3>Where science and wisdom meet</h3><p>Scientific inquiry and contemplative practice both start in wonder. Awe shows up across cultures and traditions without asking anyone to share a belief.</p></div>
     </div>
   </div>
 </section>
@@ -289,12 +320,13 @@ img{ max-width: 100%; }
     <div class="sec-head">
       <p class="eyebrow">what we do</p>
       <h2 style="max-width:none;white-space:nowrap;font-size:clamp(1.15rem,4.6vw,2.3rem)">We research it. Then we build for it.</h2>
+      <p class="lede">Good research often dies in a PDF. Ours ships as tools: evaluations labs can run, specs builders can build to, evidence funders can bet on.</p>
     </div>
     <div class="arms">
       <div class="arm">
         <span class="tag">research</span>
-        <h3>Can AI cultivate awe?</h3>
-        <p>Awe is where we start because awe is tractable: a well studied self transcendent emotion with established theory, validated instruments like the <a href="https://doi.org/10.1080/17439760.2018.1484940" target="_blank" rel="noopener">Awe Experience Scale</a> and <a href="https://doi.org/10.1037/pspi0000018" target="_blank" rel="noopener">small self</a> measures, and cross cultural evidence. <a href="https://doi.org/10.1080/02699930302297" target="_blank" rel="noopener">Keltner and Haidt</a> characterize it through perceived vastness and a need for accommodation.</p>
+        <h3>The awe study</h3>
+        <p>A controlled human study of whether AI interaction enhances awe, diminishes it, or does nothing. All three are results we will publish.</p>
         <p><a href="awe.html">Read the awe study &rarr;</a></p>
       </div>
       <div class="arm">
@@ -302,20 +334,25 @@ img{ max-width: 100%; }
         <h3>Open evaluations</h3>
         <p>We turn what moves people into evaluations any lab can run. Methods, scenarios, graders, disagreement data and negative findings are released openly.</p>
       </div>
+      <div class="arm">
+        <span class="tag">building</span>
+        <h3>An awe product profile</h3>
+        <p>Global health uses target product profiles to tell builders what a vaccine must do and prove. We&rsquo;re writing one for AI that cultivates awe: intended use, evidence bar, performance.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="collaborate">
+<section id="collaborate" class="deep">
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">what we need</p>
       <h2>Who we want on the ride</h2>
-      <p class="lede wide">Researchers, labs, funders, and faith and contemplative leaders in any tradition or none. Interested in collaborating? Get in touch.</p>
+      <p class="lede wide">Awe researchers. Labs. Artists. Contemplative leaders from any tradition, or none. And funders. Philanthropy stepped in for malaria vaccines when markets wouldn&rsquo;t. This deserves the same bet.</p>
     </div>
     <div class="ask-cta">
-      <a class="btn btn-solid" href="https://docs.google.com/forms/d/e/1FAIpQLSdGJB4a_S9-xG_puVZ0Wa8KQLTA0uYhv0zt3GvbJESf4J0fHg/viewform" target="_blank" rel="noopener">Submit a proposal</a>
-      <a class="btn btn-line" href="awe.html#collaborate">See every seat</a>
+      <a class="btn btn-solid btn-sun" href="https://docs.google.com/forms/d/e/1FAIpQLSdGJB4a_S9-xG_puVZ0Wa8KQLTA0uYhv0zt3GvbJESf4J0fHg/viewform" target="_blank" rel="noopener">Submit a proposal</a>
+      <a class="btn btn-line btn-line-deep" href="awe.html#collaborate">See every seat</a>
     </div>
   </div>
 </section>
@@ -325,7 +362,7 @@ img{ max-width: 100%; }
     <div>
       <div class="sec-head">
         <p class="eyebrow">who is doing this</p>
-        <h2>We already measure humaneness. Now for the soul.</h2>
+        <h2>We already measure the floor. Now the ceiling.</h2>
       </div>
       <div class="body-col">
         <p>Wonder Lab is incubated at <a href="https://buildinghumanetech.com" target="_blank" rel="noopener"><strong>Building Humane Tech</strong></a>, which built <a href="https://humanebench.ai" target="_blank" rel="noopener">HumaneBench</a>, an open evaluation of how AI systems treat users, scored against eight principles grounded in care ethics. It has since been adapted for ongoing evaluation inside deployed consumer conversational AI products.</p>
@@ -335,7 +372,7 @@ img{ max-width: 100%; }
     </div>
     <aside class="bht-card">
       <h3>Erika Anderson</h3>
-      <p>Founder and CEO, <a href="https://buildinghumanetech.com" target="_blank" rel="noopener">Building Humane Tech</a>, PBC. This work sits at the intersection of awe and wonder research, contemplative science, consciousness research and HCI.</p>
+      <p>Founder and CEO, <a href="https://buildinghumanetech.com" target="_blank" rel="noopener">Building Humane Tech</a>, PBC. Erika created <a href="https://humanebench.ai" target="_blank" rel="noopener">HumaneBench</a>, the open benchmark that asks what AI does to the people using it, not just what it can do. Wonder Lab asks the next question: can it expand our world?</p>
       <ul>
         <li>Created <a href="https://humanebench.ai" target="_blank" rel="noopener">HumaneBench</a>, open source, eight principles, multiple test conditions</li>
         <li>Co-chair, IEEE Measurement Subcommittee, <a href="https://sagroups.ieee.org/global-ais-flourishing/" target="_blank" rel="noopener">Global AI Systems and Human Flourishing Collaborative</a></li>
@@ -356,7 +393,7 @@ img{ max-width: 100%; }
 
 <footer>
   <div class="foot-in">
-    <span>Wonder Lab &middot; AI Safety for the Soul &middot; incubated at Building Humane Tech, PBC</span>
+    <span>Wonder Lab &middot; awe research &middot; incubated at Building Humane Tech, PBC</span>
     <span><a href="https://humanebench.ai">humanebench.ai</a> &nbsp;&middot;&nbsp; <a href="https://buildinghumanetech.com">buildinghumanetech.com</a></span>
   </div>
 </footer>
